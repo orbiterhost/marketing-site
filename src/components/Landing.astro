@@ -3,6 +3,28 @@ import astroLogo from "../assets/astro.svg";
 import background from "../assets/background.svg";
 ---
 
-<div class="flex flex-col items-center justify-start min-h-screen w-full pt-24">
-  <h1 class="text-7xl font-thin">ORBITER</h1>
+<div class="flex flex-col items-center justify-center min-h-screen w-full relative">
+  <div class="relative flex items-center justify-center">
+    <!-- Orbit 1 -->
+    <div class="absolute w-[550px] h-[550px] border border-black/20 rounded-full opacity-0 animate-spin-fast">
+      <div class="absolute w-2 h-2 bg-black rounded-full -top-1 left-1/2 -translate-x-1/2"></div>
+    </div>
+
+    <!-- Orbit 2 -->
+    <div class="absolute w-[750px] h-[750px] border border-black/20 rounded-full opacity-0 animate-spin-med">
+      <div class="absolute w-2 h-2 bg-black rounded-full -top-1 left-1/2 -translate-x-1/2"></div>
+    </div>
+
+    <!-- Orbit 3 -->
+    <div class="absolute w-[950px] h-[950px] border border-black/20 rounded-full opacity-0 animate-spin-slow">
+      <div class="absolute w-2 h-2 bg-black rounded-full -top-1 left-1/2 -translate-x-1/2"></div>
+    </div>
+
+    <!-- Orbit 4 -->
+    <div class="absolute w-[1150px] h-[1150px] border border-black/20 rounded-full opacity-0 animate-spin-slowest">
+      <div class="absolute w-2 h-2 bg-black rounded-full -top-1 left-1/2 -translate-x-1/2"></div>
+    </div>
+
+    <h1 class="text-8xl font-thin relative z-10 animate-fade-in">ORBITER</h1>
+  </div>
 </div>
