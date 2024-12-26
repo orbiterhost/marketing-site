@@ -1,0 +1,27 @@
+---
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "./ui/card";
+---
+
+
+<div class="flex flex-col gap-12 items-center justify-center min-h-screen w-full max-w-screen-lg mx-auto">
+  <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Pricing</h1>
+  <Card>
+  <CardHeader>
+    <CardTitle className="text-3xl">
+      Free!
+    </CardTitle>
+    <CardDescription>
+     While in beta try out Orbiter for free!
+    </CardDescription>
+  </CardHeader>
+  <CardContent className="flex items-center justify-center">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-32 h-32 text-green-400" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 18l-5.7-5.7l1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"/></svg>
+  </CardContent>
+  </Card>
+</div>
