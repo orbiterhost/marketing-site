@@ -1,9 +1,15 @@
 ---
 import { Button } from "@/components/ui/button";
+import hero from "../assets/hero.jpg";
 ---
 
-<div class="bg-hero-img bg-cover relative flex flex-col items-center justify-center min-h-screen w-full text-white gap-12 overflow-hidden">
+<div class={`relative flex flex-col items-center justify-center min-h-screen w-full text-white gap-12 overflow-hidden`}>
 
+<img
+    src={hero.src}
+    alt="Hero background"
+    class="absolute inset-0 w-full h-full object-cover -z-10"
+/>
     <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl flex items-center gap-2 relative z-10">
         <svg class="text-white h-24 w-24 animate-spin-icon" viewBox="0 0 261 260" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M191.853 130.013C191.853 146.308 185.38 161.936 173.858 173.458C162.336 184.98 146.708 191.453 130.413 191.453C114.118 191.453 98.4909 184.98 86.9687 173.458C75.4465 161.936 68.9734 146.308 68.9734 130.013C68.9734 113.718 75.4465 98.0909 86.9687 86.5686C98.4909 75.0464 114.118 68.5733 130.413 68.5733C146.708 68.5733 162.336 75.0464 173.858 86.5686C185.38 98.0909 191.853 113.718 191.853 130.013Z" stroke="currentColor" stroke-width="13.6533" stroke-linecap="round" stroke-linejoin="round"/>

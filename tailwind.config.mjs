@@ -5,7 +5,7 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				"hero-img": "url('/hero.jpg')",
+				"hero-img": "url(./assets/hero.jpg)",
 			},
 			animation: {
 				"spin-slowest":
