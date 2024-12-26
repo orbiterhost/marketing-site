@@ -11,17 +11,70 @@ import {
 
 <div class="flex flex-col gap-12 items-center justify-center min-h-screen w-full max-w-screen-lg mx-auto">
   <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Pricing</h1>
-  <Card>
-  <CardHeader>
-    <CardTitle className="text-3xl">
-      Free!
-    </CardTitle>
-    <CardDescription>
-     While in beta try out Orbiter for free!
-    </CardDescription>
-  </CardHeader>
-  <CardContent className="flex items-center justify-center">
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-32 h-32 text-green-400" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 18l-5.7-5.7l1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"/></svg>
-  </CardContent>
-  </Card>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+    <Card>
+      <CardHeader>
+        <CardTitle className="text-3xl">
+          Free
+        </CardTitle>
+        <CardDescription>
+          $0/month
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex items-start justify-start">
+        <ul class="list-disc ml-4 space-y-2">
+          <li>Two projects</li>
+          <li>25mb file/folder upload limit</li>
+          <li>500mb storage</li>
+          <li>1 collaborator</li>
+          <li>Free orbiter.website subdomain</li>
+        </ul>
+      </CardContent>
+    </Card>
+
+    <Card>
+      <CardHeader>
+        <CardTitle className="text-3xl">
+          Launch
+        </CardTitle>
+        <CardDescription>
+          $9/month
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex items-start justify-start">
+        <ul class="list-disc ml-4 space-y-2">
+          <li>5 projects</li>
+          <li>50mb file/folder upload limit</li>
+          <li>1gb storage</li>
+          <li>2 collaborators</li>
+          <li>Custom domain</li>
+          <li>Remove Orbiter branding</li>
+          <li>Unlimited traffic</li>
+        </ul>
+      </CardContent>
+    </Card>
+
+    <Card>
+      <CardHeader>
+        <CardTitle className="text-3xl">
+          Orbit
+        </CardTitle>
+        <CardDescription>
+          $19/month
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex items-start justify-start">
+        <ul class="list-disc ml-4 space-y-2">
+          <li>Unlimited projects</li>
+          <li>100mb file/folder upload limit</li>
+          <li>10gb storage</li>
+          <li>Unlimited collaborators</li>
+          <li>Custom domain</li>
+          <li>Analytics</li>
+          <li>Remove Orbiter branding</li>
+          <li>Unlimited traffic</li>
+        </ul>
+      </CardContent>
+    </Card>
+  </div>
 </div>
