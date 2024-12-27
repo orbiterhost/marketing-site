@@ -95,9 +95,7 @@ export function FileDropzone() {
 				/>
 				<Upload className="mx-auto h-12 w-12 text-gray-400" />
 				<p className="mt-2">Launch your site in 30 seconds</p>
-				<p className="mt-1 text-xs text-gray-500">
-					{`Up to ${maxFiles} files, max ${maxSize / 1024 / 1024}MB each`}
-				</p>
+				<p className="mt-1 text-xs text-gray-500">Up to 25MB</p>
 			</div>
 			{files.length > 0 && (
 				<ul className="mt-4 space-y-2">
