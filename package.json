@@ -33,6 +33,7 @@
 		"viem": "^2.21.57"
 	},
 	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.15",
 		"prettier": "^3.4.2",
 		"prettier-plugin-astro": "^0.14.1"
 	}
