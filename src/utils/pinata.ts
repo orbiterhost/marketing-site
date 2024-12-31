@@ -6,8 +6,7 @@ export const pinata = new PinataSDK({
 });
 
 export const getKey = async (token: string) => {
-
-  if (token) {
+  if (!token) {
     throw Error("No token provided");
   }
 
