@@ -2,7 +2,7 @@
 title: 'The Static Website Manifesto'
 description: 'Building websites used to be fun. Let’s bring back the joy of putting your work online. This is our manifesto.'
 pubDate: 'Dec 31 2024'
-heroImage: '/html.png'
+heroImage: '/blog/html.png'
 ---
 Building websites used to be fun. Let’s bring back the joy of putting your work online. This is our manifesto.
 
@@ -31,18 +31,12 @@ This philosophy doesn't just apply to personal websites. Static web applications
 As server-side rendering gains popularity, we're taking a stand for static sites. Orbiter is here for:
 
 *   The people building websites that don't need servers
-    
 *   The developers tired of waiting minutes for builds when they could have a working site in seconds
-    
 *   The web designers writing their first HTML
-    
 *   The marketers moving from WordPress to simple static HTML
-    
 *   The developers creating their own static site generators
-    
 *   Anyone who wants to share their work on the web
-    
 
 Don't feel like learning complex deployment processes? No problem. Orbiter gives you the freedom to work the way you want. We've built the simplest static site hosting platform on the web because we believe in making the web flexible, fun, and fast again.
 
-Ready to make web hosting fun again? J[oin us at Orbiter and put your website online in seconds](https://app.orbiter.host?ref=blog).
+Ready to make web hosting fun again? [Join us at Orbiter and put your website online in seconds](https://app.orbiter.host?ref=blog).
