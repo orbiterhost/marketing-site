@@ -1,0 +1,56 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import hero from "@/assets/hero.jpg";
+import { Card, CardHeader } from "@/components/ui/card";
+import "@/styles/globals.css";
+
+const SITE_TITLE = "Orbiter Blog";
+const SITE_DESCRIPTION = "The easiest way to host static websites";
+
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<main>
+     	<div class={`relative flex flex-col items-center justify-center min-h-[650px] w-full text-white gap-12 overflow-hidden`}>
+       	<img
+          src={hero.src}
+          alt="Hero background"
+          class="absolute inset-0 w-full h-full object-cover -z-10"
+        />
+
+       	<div class="flex flex-col gap-2 items-center justify-center">
+          <h1 class="text-6xl sm:text-8xl flex items-center gap-2 relative z-10">
+            Blog
+          </h1>
+        </div>
+  		</div>
+				<div>
+					{
+						posts.map((post) => (
+							<Card>
+							 <CardHeader>
+								<a href={`/blog/${post.id}/`}>
+									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<h4>{post.data.title}</h4>
+									<p>
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+								</a>
+							 </CardHeader>
+							</Card>
+						))
+					}
+				</div>
+		</main>
+	</body>
+</html>
