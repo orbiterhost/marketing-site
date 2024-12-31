@@ -4,7 +4,7 @@ description: 'If you have ever wanted to migrate your WordPress site to static H
 pubDate: 'Dec 31 2024'
 heroImage: '/wordpress.jpg'
 ---
- WordPress has been a dominant player in the world of web hosting. At its peak, X% of all websites were hosted on WordPress. In recent months, WordPress has found itself mixed up in controversies, but even without those controversies, there’s always been an active pipeline of people who want to move their websites from the complexity of WordPress installations to static HTML.
+ WordPress has been a dominant player in the world of web hosting. As of December 2024, [43% of all websites were hosted on WordPress](https://www.wpzoom.com/blog/wordpress-statistics/). In recent months, WordPress has found itself mixed up in controversies, but even without those controversies, there’s always been an active pipeline of people who want to move their websites from the complexity of WordPress installations to static HTML.
 
 Today, we’re going to walk through how to do exactly that and how to host the new static website on Orbiter. We’ll be using a free service called [Simply Static](https://simplystatic.com/) (fitting, right?) to convert our WordPress site. Let’s dive right in!
 
