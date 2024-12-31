@@ -35,7 +35,7 @@ export const uploadSite = async (files: any, token: string) => {
         }
       })
     } else {
-      upload = await pinata.upload.file(files).key(JWT).group("c5e8c379-e7c1-4c43-a2e9-79597d477481").addMetadata({
+      upload = await pinata.upload.file(files[0]).key(JWT).group("c5e8c379-e7c1-4c43-a2e9-79597d477481").addMetadata({
         keyValues: {
           userId: token
         }
