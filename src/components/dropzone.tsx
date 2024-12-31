@@ -71,7 +71,14 @@ export function FileDropzone() {
 
       const newValidFiles = [...files, ...validFiles].slice(0, maxFiles);
       setFiles(newValidFiles);
-      const upload = await uploadSite(newValidFiles, token)
+
+      let upload: string
+      if (newValidFiles.length === 1) {
+        upload = await uploadSite(files[0], token);
+      } else {
+        upload = await uploadSite(files, token);
+      }
+
       window.location.href = `https://app.orbiter.host?cid=${upload}`
     },
     [files, setFiles],
