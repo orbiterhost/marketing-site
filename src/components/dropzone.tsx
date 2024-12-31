@@ -1,6 +1,16 @@
 import type React from "react";
 import { useState, useRef, useCallback } from "react";
 import { Upload, Folder, File, CircleCheck } from "lucide-react";
+import { getKey, uploadSite } from "@/utils/pinata";
+
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
 
 
 export function FileDropzone() {
@@ -12,8 +22,36 @@ export function FileDropzone() {
   const acceptedFileTypes = ["*/*"];
   const [files, setFiles] = useState<File[]>([])
 
+  const verifyCaptcha = async () => {
+    try {
+      const token = await new Promise<string>((resolve) => {
+        window.grecaptcha.ready(() => {
+          window.grecaptcha
+            .execute("6LcQHqQqAAAAADHN8zgMRAFL8c9DH1sHJ0yu-R-e", { action: "submit" })
+            .then(resolve);
+        });
+      });
+
+      // Here you would typically send the token to your backend for verification
+      // For now, we'll just return true
+      return token;
+    } catch (error) {
+      console.error("Captcha verification failed:", error);
+      return false;
+    }
+  };
+
+
   const handleFiles = useCallback(
-    (newFiles: FileList | File[]) => {
+    async (newFiles: FileList | File[]) => {
+      const token = await verifyCaptcha();
+      if (!token) {
+        console.log("Security verification failed. Please try again.");
+        return;
+      }
+
+      console.log(token)
+
       const validFiles = Array.from(newFiles).filter((file) => {
         if (file.size > maxSize) {
           console.warn(`File ${file.name} is too large`);
@@ -33,6 +71,8 @@ export function FileDropzone() {
 
       const newValidFiles = [...files, ...validFiles].slice(0, maxFiles);
       setFiles(newValidFiles);
+      const upload = await uploadSite(newValidFiles, token)
+      window.location.href = `https://app.orbiter.host?cid=${upload}`
     },
     [files, setFiles],
   );
