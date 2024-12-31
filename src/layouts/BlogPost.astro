@@ -2,6 +2,12 @@
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import AnimatedLink from "@/components/AnimatedLink.astro";
+import hero from "@/assets/hero.jpg";
+import logo from "@/assets/white_logo.png";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import Footer from "@/components/Footer.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -21,33 +27,38 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     </style></head
   >
   <body>
-    <main>
-      <article>
-        <div class="hero-image">
-          {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
-            )
-          }
+    <div
+      class={`relative flex flex-col items-center justify-start min-h-[75px] w-full text-white gap-12`}
+    >
+      <div
+        class="w-full max-w-screen-xl flex items-center justify-between gap-2 my-12 mb-12 px-6"
+      >
+        <a href="/">
+          <img class="h-12" src={logo.src} alt="" />
+        </a>
+        <div class="flex items-center gap-12">
+          <AnimatedLink className="text-xl" href="/blog">Blog</AnimatedLink>
+          <AnimatedLink className="text-xl" href="/">Home</AnimatedLink>
         </div>
-        <div class="prose">
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <h1>{title}</h1>
-            <hr />
-          </div>
-          <slot />
-        </div>
-      </article>
-    </main>
-  </body>
+      </div>
+
+      <img
+        src={hero.src}
+        alt="Hero background"
+        class="absolute inset-0 w-full h-full object-cover -z-10"
+      />
+    </div>
+
+    <article class="max-w-2xl flex flex-col mx-auto my-12">
+      <Card className="w-[350px] sm:w-full h-auto mx-auto overflow-hidden">
+        {heroImage && <img class="w-full h-full" src={heroImage} alt="" />}
+      </Card>
+      <h1 class="text-3xl font-bold mt-6">{title}</h1>
+      <FormattedDate date={pubDate} />
+      <Separator />
+      <div class="mt-6">
+        <slot />
+      </div>
+    </article>
+  </body><Footer />
 </html>

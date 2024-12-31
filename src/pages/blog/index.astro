@@ -30,7 +30,9 @@ const posts = (await getCollection("blog")).sort(
         <div
           class="w-full max-w-screen-xl flex items-center justify-between gap-2 my-12 mb-24 px-6"
         >
-          <img class="h-12" src={logo.src} alt="" />
+          <a href="/">
+            <img class="h-12" src={logo.src} alt="" />
+          </a>
           <AnimatedLink className="text-xl" href="/">Home</AnimatedLink>
         </div>
 
