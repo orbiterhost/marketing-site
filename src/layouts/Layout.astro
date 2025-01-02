@@ -1,3 +1,7 @@
+---
+import { ClientRouter } from "astro:transitions";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -32,6 +36,8 @@
       content="The simplest way to upload and host static sites and apps"
     />
     <meta name="twitter:image" content="/og.png" />
+
+    <ClientRouter />
 
     <script
       async

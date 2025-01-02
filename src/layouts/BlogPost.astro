@@ -50,7 +50,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     </div>
 
     <article class="max-w-2xl flex flex-col mx-auto my-12 px-4">
-    <AnimatedLink href="/blog" className="!text-black mb-2 inline-block w-[120px]" bgClass="!bg-black">← Back to Posts</AnimatedLink>
+      <AnimatedLink
+        href="/blog"
+        className="!text-black mb-2 inline-block w-[120px]"
+        bgClass="!bg-black">← Back to Posts</AnimatedLink
+      >
       <Card className="mt-0 w-full mx-auto overflow-hidden">
         {
           heroImage && (
