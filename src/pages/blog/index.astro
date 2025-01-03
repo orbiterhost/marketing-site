@@ -33,7 +33,13 @@ const posts = (await getCollection("blog")).sort(
           <a href="/">
             <img class="h-12" src={logo.src} alt="" />
           </a>
-          <AnimatedLink className="text-xl" href="/">Home</AnimatedLink>
+          <div class="flex items-center sm:gap-12 gap-4">
+            <AnimatedLink className="text-xl" href="/">Home</AnimatedLink>
+            <AnimatedLink className="text-xl" href="/about">About</AnimatedLink>
+            <AnimatedLink className="text-xl" href="/pricing"
+              >Pricing</AnimatedLink
+            >
+          </div>
         </div>
 
         <img
