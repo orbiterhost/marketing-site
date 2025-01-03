@@ -1,7 +1,7 @@
 ---
 import Landing2 from "@/components/Landing2.astro";
 import Copy from "../components/Copy.astro";
-import Layout from "../layouts/Layout.astro";
+import HomeLayout from "@/layouts/HomeLayout.astro";
 import "@/styles/globals.css";
 import Features from "@/components/Features.astro";
 import Pricing from "@/components/Pricing.astro";
@@ -12,11 +12,11 @@ import Footer from "@/components/Footer.astro";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Landing2 />
-	<Copy />
-	<Features />
-	<Pricing />
-	<Contact />
-	<Footer />
-</Layout>
+<HomeLayout>
+  <Landing2 />
+  <Copy />
+  <Features />
+  <Pricing />
+  <Contact />
+  <Footer />
+</HomeLayout>
