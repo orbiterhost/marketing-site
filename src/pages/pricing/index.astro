@@ -19,12 +19,18 @@ import hero from "@/assets/hero.jpg";
         class="w-full max-w-screen-xl flex items-center justify-between gap-2 sm:my-12 my-4 sm:mb-24 px-6"
       >
         <a href="/">
-          <img class="h-12" src={logo.src} alt="" />
+          <img class="sm:h-12 h-10" src={logo.src} alt="" />
         </a>
-        <div class="flex items-center sm:gap-12 gap-4">
-          <AnimatedLink className="text-xl" href="/">Home</AnimatedLink>
-          <AnimatedLink className="text-xl" href="/about">About</AnimatedLink>
-          <AnimatedLink className="text-xl" href="/blog">Blog</AnimatedLink>
+        <div class="flex items-center sm:gap-12 gap-3">
+          <AnimatedLink className="sm:text-xl text-md" href="/"
+            >Home</AnimatedLink
+          >
+          <AnimatedLink className="sm:text-xl text-md" href="/about"
+            >About</AnimatedLink
+          >
+          <AnimatedLink className="sm:text-xl text-md" href="/blog"
+            >Blog</AnimatedLink
+          >
         </div>
       </div>
 
