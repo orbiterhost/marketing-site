@@ -65,7 +65,7 @@ const posts = (await getCollection("blog")).sort(
       >
         {
           posts.map((post) => (
-            <a class="mx-auto" href={`/blog/${post.id}/`}>
+            <a class="mx-auto" href={`/blog/${post.id}`}>
               <Card className="w-[300px] overflow-hidden">
                 <div class="aspect-video">
                   <img
