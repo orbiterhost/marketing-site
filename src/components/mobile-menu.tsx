@@ -15,6 +15,9 @@ export function MobileMenu() {
       </SheetTrigger>
       <SheetContent className="bg-none text-2xl flex flex-col gap-8 items-end pt-20" side="top">
         <SheetTitle className="hidden">Mobile Menu</SheetTitle>
+        <a href="/"
+        >Home</a
+        >
         <a href="/about"
         >About</a
         >
