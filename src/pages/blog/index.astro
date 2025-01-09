@@ -8,6 +8,7 @@ import AnimatedLink from "@/components/AnimatedLink.astro";
 import hero from "@/assets/hero.jpg";
 import logo from "@/assets/white_logo.png";
 import Footer from "@/components/Footer.astro";
+import Nav from "@/components/Nav.astro";
 
 const SITE_TITLE = "Orbiter Blog";
 const SITE_DESCRIPTION = "The easiest way to host static websites";
@@ -25,26 +26,9 @@ const posts = (await getCollection("blog")).sort(
   <body>
     <main>
       <div
-        class={`relative flex flex-col items-center justify-start sm:min-h-[450px] min-h-[250px] w-full text-white gap-12`}
+        class={`relative flex flex-col items-center justify-start sm:min-h-[450px] min-h-[325px] w-full text-white gap-12`}
       >
-        <div
-          class="w-full max-w-screen-xl flex items-center justify-between gap-2 sm:my-12 my-4 sm:mb-24 px-6"
-        >
-          <a href="/">
-            <img class="sm:h-12 h-10" src={logo.src} alt="" />
-          </a>
-          <div class="flex items-center sm:gap-12 gap-3">
-            <AnimatedLink className="text-md sm:text-xl" href="/"
-              >Home</AnimatedLink
-            >
-            <AnimatedLink className="text-md sm:text-xl" href="/about"
-              >About</AnimatedLink
-            >
-            <AnimatedLink className="text-md sm:text-xl" href="/pricing"
-              >Pricing</AnimatedLink
-            >
-          </div>
-        </div>
+        <Nav />
 
         <img
           src={hero.src}

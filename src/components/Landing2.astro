@@ -1,33 +1,14 @@
 ---
 import { Button } from "@/components/ui/button";
 import { FileDropzone } from "@/components/dropzone";
-import AnimatedLink from "@/components/AnimatedLink.astro";
 import hero from "@/assets/hero.jpg";
-import logo from "@/assets/white_logo.png";
+import Nav from "@/components/Nav.astro";
 ---
 
 <div
   class={`relative flex flex-col items-center justify-start min-h-screen w-full text-white gap-12 overflow-hidden`}
 >
-  <div
-    class="w-full max-w-screen-xl flex items-center justify-between gap-2 my-12 mb-12 px-6"
-  >
-    <a href="/">
-      <img class="sm:h-12 h-10" src={logo.src} alt="" />
-    </a>
-    <div class="flex items-center sm:gap-12 gap-3">
-      <AnimatedLink className="text-md sm:text-xl" href="/about"
-        >About</AnimatedLink
-      >
-      <AnimatedLink className="text-md sm:text-xl" href="/pricing"
-        >Pricing</AnimatedLink
-      >
-      <AnimatedLink className="text-md sm:text-xl" href="/blog"
-        >Blog</AnimatedLink
-      >
-    </div>
-  </div>
-
+  <Nav />
   <img
     src={hero.src}
     alt="Hero background"
