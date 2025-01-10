@@ -1,0 +1,76 @@
+---
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { AvatarComponent } from "./avatar-component";
+import chakib from "@/assets/chakib.jpg";
+import wim from "@/assets/wim.jpeg";
+import tony from "@/assets/tony.jpeg";
+import jp from "@/assets/jp.jpg";
+
+const testimonials = [
+  {
+    src: chakib.src,
+    alt: "CS",
+    fallbackText: "CS",
+    name: "Chakib Souilamas",
+    title: "Founder of invoice.my",
+    quote:
+      "This thing is ridiculously fast. I literally signed up and had a react app live in under 30 seconds (no kidding, I timed it!).",
+  },
+  {
+    src: wim.src,
+    alt: "WH",
+    fallbackText: "CS",
+    name: "Wim Hurst",
+    title: "Founer of extracted.app",
+    quote:
+      "I have been looking for something like this for ages. Most hosting providers don't offer folder uploads which is annoying since my project is in a folder which would make this whole process much easier.",
+  },
+  {
+    src: tony.src,
+    alt: "TD",
+    fallbackText: "TD",
+    name: "Tony D'Addeo",
+    title: "Engineer at Warpcast",
+    quote: "Deployed a site with Orbiter yesterday. Great experience!",
+  },
+  {
+    src: jp.src,
+    alt: "JP",
+    fallbackText: "JP",
+    name: "JP Franeto",
+    title: "Founder of Anky and Farbarter",
+    quote:
+      "My website is hosted on Orbiter. It's just a html file that talks to a server. 10/10 product. Shipping a static website has never been easier!",
+  },
+];
+---
+
+<div
+  class="flex flex-col gap-12 items-center justify-center min-h-screen sm:min-h-[600px] sm:my-12 w-full max-w-screen-lg mx-auto"
+>
+  <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+    What our Users Think
+  </h1>
+  <div class="grid sm:grid-cols-2 grid-cols-1 gap-8 p-4">
+    {
+      testimonials.map((testimonial) => (
+        <Card className="w-[350px]">
+          <CardHeader className="flex flex-row items-center gap-4">
+            <AvatarComponent
+              client:load
+              src={testimonial.src}
+              alt={testimonial.alt}
+              fallbackText={testimonial.fallbackText}
+              className="h-16 w-16"
+            />
+            <div class="flex flex-col">
+              <p class="text-xl font-bold">{testimonial.name}</p>
+              <p class="text-secondary-foreground">{testimonial.title}</p>
+            </div>
+          </CardHeader>
+          <CardContent className="italic">"{testimonial.quote}"</CardContent>
+        </Card>
+      ))
+    }
+  </div>
+</div>
