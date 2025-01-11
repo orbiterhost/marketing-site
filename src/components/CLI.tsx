@@ -32,11 +32,11 @@ export function CLI() {
       className="flex flex-col gap-12 items-center justify-center min-h-screen sm:min-h-[600px] sm:my-12 w-full mx-auto"
     >
       <div className="max-w-screen-lg flex flex-col gap-12 items-center justify-center">
-        <div className="flex flex-col gap-2 justify-center items-center">
+        <div className="flex flex-col gap-2 justify-center items-center mx-4 text-center">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             Orbiter CLI
           </h1>
-          <h3 className="text-xl">
+          <h3 className="sm:text-xl text-lg">
             Create update and manage your sites from the terminal
           </h3>
 
