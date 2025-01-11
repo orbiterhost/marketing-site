@@ -1,5 +1,5 @@
 import { Button } from "./ui/button"
-import { Check, Copy, Github, Link } from "lucide-react"
+import { Check, Copy, Github } from "lucide-react"
 import { useState, useEffect } from "react"
 import { codeToHtml } from 'shiki'
 
