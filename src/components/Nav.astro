@@ -2,6 +2,8 @@
 import AnimatedLink from "@/components/AnimatedLink.astro";
 import { MobileMenu } from "./mobile-menu";
 import logo from "@/assets/white_logo.png";
+import { Button } from "./ui/button";
+import { Rocket } from "lucide-react";
 ---
 
 <div
@@ -18,5 +20,14 @@ import logo from "@/assets/white_logo.png";
     <AnimatedLink className="text-xl" href="https://docs.orbiter.host"
       >Docs</AnimatedLink
     >
+    <Button variant="secondary" className="text-xl">
+      <a
+        class="flex items-center justify-center gap-2"
+        href="https://app.orbiter.host"
+      >
+        <Rocket className="!h-5 !w-5" />
+        Launch
+      </a>
+    </Button>
   </div>
 </div>

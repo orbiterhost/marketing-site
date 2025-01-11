@@ -7,6 +7,7 @@ import Features from "@/components/Features.astro";
 import Contact from "@/components/Contact.astro";
 import Footer from "@/components/Footer.astro";
 import Testimonials from "@/components/Testimonials.astro";
+import { CLI } from "@/components/CLI.tsx";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -17,6 +18,7 @@ import Testimonials from "@/components/Testimonials.astro";
   <Copy />
   <Features />
   <Testimonials />
+  <CLI client:load />
   <Contact />
   <Footer />
 </HomeLayout>
