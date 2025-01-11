@@ -8,12 +8,17 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://orbiter.host",
-    output: "static",
-    build: {
-        assetsPrefix: "./",
-    },
-    integrations: [tailwind({
-        applyBaseStyles: false,
-		}), react(), mdx(), sitemap()],
+  site: "https://orbiter.host",
+  output: "static",
+  markdown: {
+    shikiConfig: {
+      theme: 'poimandres'
+    }
+  },
+  build: {
+    assetsPrefix: "./",
+  },
+  integrations: [tailwind({
+    applyBaseStyles: false,
+  }), react(), mdx(), sitemap()],
 });
