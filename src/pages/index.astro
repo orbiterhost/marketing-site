@@ -13,6 +13,30 @@ import { CLI } from "@/components/CLI.tsx";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
+<script>
+  function sendFrameReadyMessage() {
+    const generateMessageId = () => {
+      return Array(4)
+        .fill(0)
+        .map(() =>
+          Math.floor(Math.random() * Number.MAX_SAFE_INTEGER).toString(16),
+        )
+        .join("-");
+    };
+
+    const message = {
+      id: generateMessageId(),
+      type: "APPLY",
+      path: ["ready"],
+      argumentList: [{}],
+    };
+
+    window.parent.postMessage(message, "*");
+  }
+
+  sendFrameReadyMessage();
+</script>
+
 <HomeLayout>
   <Landing2 />
   <Copy />

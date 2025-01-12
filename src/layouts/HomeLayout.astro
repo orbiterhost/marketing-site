@@ -1,5 +1,20 @@
 ---
 import { ClientRouter } from "astro:transitions";
+
+const metadata = JSON.stringify({
+  version: "next",
+  imageUrl: "https://orbiter.host/og.png",
+  button: {
+    title: "Launch",
+    action: {
+      type: "launch_frame",
+      name: "Launch",
+      url: "https://orbiter.host",
+      splashImageUrl: "https://orbiter.host/icon.svg",
+      splashBackgroundColor: "#ffffff",
+    },
+  },
+});
 ---
 
 <!doctype html>
@@ -14,6 +29,11 @@ import { ClientRouter } from "astro:transitions";
     <meta
       name="description"
       content="The simplest way to upload and host static sites and apps"
+    />
+
+    <meta
+      name="fc:frame"
+      content='{"version":"next","imageUrl":"https://orbiter.host/og.png","button":{"title":"Launch","action":{"type":"launch_frame","name":"Launch","url":"https://orbiter.host","splashImageUrl":"https://orbiter.host/icon.svg","splashBackgroundColor":"#ffffff"}}}'
     />
 
     <!-- Facebook Meta Tags -->
@@ -37,14 +57,14 @@ import { ClientRouter } from "astro:transitions";
     />
     <meta name="twitter:image" content="https://orbiter.host/og.png" />
 
-    <meta property="fc:frame" content="vNext" />
+    <!-- <meta property="fc:frame" content="vNext" />
     <meta property="fc:frame:image" content="https://orbiter.host/og.png" />
     <meta name="fc:frame:button:1" content="Launch" />
     <meta name="fc:frame:button:1:action" content="link" />
     <meta name="fc:frame:button:1:target" content="https://app.orbiter.host" />
     <meta name="fc:frame:button:2" content="Docs" />
     <meta name="fc:frame:button:2:action" content="link" />
-    <meta name="fc:frame:button:2:target" content="https://docs.orbiter.host" />
+    <meta name="fc:frame:button:2:target" content="https://docs.orbiter.host" /> -->
 
     <ClientRouter />
 
