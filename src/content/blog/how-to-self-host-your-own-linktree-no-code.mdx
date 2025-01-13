@@ -1,0 +1,82 @@
+---
+title: "How to Self-Host Your Own Linktree (Even If You Can’t Code)"
+pubDate: "Jan 13 2025"
+description: "Linktree is a great tool, but it comes with a lot of lock-in and bloat. You can self-host your own version without knowing how to code."
+heroImage: "https://cdn.orbiter.host/ipfs/bafkreih5dlzul5jkcvy232dl5tgtwoks5arlkpvvtsbpxhkjjy5hxlxzci"
+---
+
+Link aggregation is nothing new. People have been building sites with multiple links to their projects and other sites since the 90s. However, with Instagram allowing just a single link in bios and no links in posts, there has been strong demand for simple link aggregation that allows people to have one URL that points to a bunch of other links. 
+
+Linktree is probably the biggest player in the market that enables people to build these link aggregation pages without writing code, but it comes at a cost—both monetary and otherwise. When using Linktree, you have to pay to remove branding or have additional “advanced” features. You are also locked into Linktree’s platform. It’s a useful service, and it may seem like you don’t have many options, but you can build your own personal link aggregation site even if you don’t know how to code. 
+
+I was inspired by [this post from Greg Pak.](https://bsky.app/profile/gregpak.net/post/3lfhwdb3nps24) 
+
+![Greg Pak Bluesky Post](https://cdn.orbiter.host/ipfs/bafkreiefufsrwmk4ktfmqaq6ode6mz4pcol4i2dvkw2zsfka35i57xmaoi)
+
+Greg has been building websites for decades now, so it’s easy for him to spin this up himself. But I started wondering how someone with no coding experience and no experience with HTML at all could do this. Then it dawned on me. 
+
+AI is perfect for this. 
+
+So, in this quick tutorial, I’m going to show you how to make your own link aggregation site and self-host it on Orbiter for free using AI chatbots. I’ll be using Claude, but substitute the chatbot of your choosing and the results will be similar. 
+
+## “Building the site”
+
+The first step is making sure you have the links you’d like to have on your link aggregation site. Easy enough. The second step is having a general idea of how you’d like the site to look. You can use plain language for this. 
+
+When you are ready, open your AI chatbot app and type out that you would like to make a Linktree style link aggregation site for your personal links. Provide your name, any styling you’d like to see on the site, and more. Then provide the links. You will also want to tell the chatbot that the final output should be a single html file that contains all the html, css, and JavaScript. 
+
+Here’s the prompt I used: 
+
+```jsx
+Please build me a linktree alternative for my links. It should be modern and responsive. No images. My name is Justin Hunter, and here are my links: 
+
+Personal Website: https://polluterofminds.com
+Work Website: https://orbiter.host 
+Book Website: https://bookshop.org/p/books/leaving-arizona-justin-hunter/14825776?ean=9781952050022 
+Twitter: https://x.com/polluterofminds
+Github: https://github.com/polluterofminds 
+
+Please output the result into a single html file that includes all the html, css, and js. The file should be called index.html.
+```
+
+The chatbot will write the html and, in the case of Claude at least, show you a preview of what your site will look like. Feel free to follow up with any changes you’d like to see made. When you’re comfortable with it, click the download button for the output file. You may have to reprompt to ask for a downloadable file. When the file is downloaded, check to see it is called `index.html`. If not, just rename it. 
+
+[Next, sign up for a free Orbiter account here](https://orbiter.host/pricing). When you’ve logged into Orbiter, click the Create Site button. Choose the single file upload option or drag your `index.html` file into the modal. Give your site a subdomain (I used justinlinks for mine). Then click the create button. 
+
+In a few seconds your self-host, free, and totally personalized Linktree alternative site will be online. I made a video of the whole process, including LLM generation and uploading the file. 
+
+<video
+  autoPlay
+  muted
+  loop
+  playsinline
+  className="not-content"
+  src="https://cdn.orbiter.host/ipfs/bafybeicsiaec4vtohesqidosohde7ee24trvknbrzcrphvayncftcxvrua"
+></video>
+
+In the amount of time it would take you to create a Linktree account and create your Linktree page, you have you own personalized link aggregation site that doesn’t rely on anyone, not even Orbiter. You can move your site to any hosting provider at any time. 
+
+But, you might be thinking, what about adding and removing links? Just as easy. 
+
+## Updating your link aggregation site
+
+To update your site, fire up the old AI chatbot again. Attach the index.html file for your site, and tell the chatbot what you want to change. If you want to add a link, provide that link. If you wan tto re-order the links, you can do that too. Delete? Easy, just tell the chatbot. 
+
+The result will be similar to creation. You’ll get a new html file that you can download. Once again, you might have to rename this file to `index.html`, but once you have the file, log into Orbiter, click the gear icon by your site, then click Update Site. Drag the new file into the modal or choose the single file upload option, and click Update. 
+
+In a few seconds, your updates will be live for anyone to see. Here’s a quick video demo of this. 
+
+<video
+  autoPlay
+  muted
+  loop
+  playsinline
+  className="not-content"
+  src="https://cdn.orbiter.host/ipfs/bafybeickk337u5ze4sr43ro64ggetfz6jsfknhdoss3hhznlii5cizbnsq"
+></video>
+
+## Conclusion
+
+Linktree is a solid service, and many non-technical people use it. But they don’t have to. You don’t have to be technical to build your own website and self-host it. 
+
+Orbiter makes things even simpler with the fastest and easiest website hosting available. [Try Orbiter](https://orbiter.host) with your link aggregation site today (or any other site!).
