@@ -1,0 +1,71 @@
+---
+title: "How to Host an Expo App on Orbiter"
+pubDate: "Jan 30 2025"
+description: "Expo has become the most popular way to build mobile applications using React Native. Learn how you can host web builds on Orbiter!"
+heroImage: "https://cdn.orbiter.host/ipfs/bafybeiblcumfz42zvo4esrb62uchqh4a5otmb7o2ca4wagfuk3cbsqhpj4"
+---
+
+If you’re building mobile apps then there’s a chance you’ve heard of React Native before. It’s becoming a popular way to build cross platform apps, where a single codebase can be deployed to iOS, Android, and even the Web. Expo has made building on React Native so much simpler than ever before, with great documentation, features, and plugins to satisfy pretty much anyone who wants to build a mobile app. While mobile apps are generally installed through app stores, you still need a place to host it if you’re also deploying to the web. In this post we’ll show you how easy it is to do just that with Orbiter!
+
+## Getting Started
+
+In order to follow this tutorial you’ll need the following:
+
+- Node.js V.20 or higher
+- A text editor like VSCode, Cursor, or Zed
+- A free Orbiter account
+
+Once you have all of that, our project begins with just one command:
+
+```bash
+npx create-expo-app@latest expo-app
+```
+
+Once it’s finished installing run the commands below to navigate to the project and start up the dev server
+
+```bash
+cd expo-app
+npm run web
+```
+
+You should now see the app in your browser!
+
+## Hosting
+
+To make sure your app is setup for a static build output for the web, open up the `app.json` file and locate the `web` object.
+
+```json
+"web": {
+  "bundler": "metro",
+  "output": "static",
+  "favicon": "./assets/images/favicon.png"
+},
+```
+
+These will generally already be set automatically, but if not make sure the `bundler` is set to `metro` and the `output` is set to `static`.
+
+After confirming your `app.json` is correct you can run the command below to build the project:
+
+```bash
+npx expo export --platform web
+```
+
+This will create a `dist` folder which we’ll upload to Orbiter!
+
+Log into your Orbiter account and click the Upload Site button. Drag your `dist` folder into the modal or click the Select Folder button then choose the `dist` folder we built earlier. Give your site a subdomain, and click Create.
+
+![screenshot](https://cdn.orbiter.host/ipfs/bafkreiaybqrmp7qs3dbclbrhepxdritwt7poprgpinokoxhhzaindazpxy)
+
+That’s it! You should see the site listed on the grid where you can visit it. If you prefer a CLI method, we got you covered there too. It’s just three commands:
+
+```bash
+npm i -g orbiter-cli
+
+orbiter login -p google # or github
+
+orbiter create -d expo-app ./dist
+```
+
+## Wrapping Up
+
+Expo makes it dead simple to spin up a mobile app that’s ready to launch on multiple platforms, and Orbiter is here it to make the web just as simple. Be sure to try out today for free and [sign up now!](https://app.orbiter.host)
