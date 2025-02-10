@@ -8,6 +8,7 @@ import logo from "@/assets/white_logo.png";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Footer from "@/components/Footer.astro";
+import Nav from "@/components/Nav.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -33,17 +34,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       <div
         class="w-full max-w-screen-xl flex items-center justify-between gap-2 my-12 mb-12 px-6"
       >
-        <a href="/">
-          <img class="sm:h-12 h-10" src={logo.src} alt="" />
-        </a>
-        <div class="flex items-center gap-12">
-          <AnimatedLink className="text-md sm:text-xl" href="/blog"
-            >Blog</AnimatedLink
-          >
-          <AnimatedLink className="text-md sm:text-xl" href="/"
-            >Home</AnimatedLink
-          >
-        </div>
+        <Nav />
       </div>
 
       <img

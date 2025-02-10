@@ -1,0 +1,27 @@
+---
+title: "Announcing ENS Support"
+description: "Thanks to Orbiter's new Resolver you can now link an Orbiter site to your ENS, making it the easiest way to host an ENS site on IPFS"
+pubDate: "Feb 10 2025"
+heroImage: "https://cdn.orbiter.host/ipfs/bafybeia7i67zaj6melkjn73ympip25injwufun2dhgtiqpickieqkeivea"
+---
+
+As we’ve [posted previously](/blog/how-we-use-blockchain-behind-the-scenes), Orbiter is built on several pieces of decentralized technology such as IPFS and [Base](https://base.org). Having a website hosted on IPFS has been done before, but our approach certainly stands out and makes it much easier. People who are already in the blockchain space are also generally aware of [ENS](https://ens.domains), or Ethereum Name Service. It’s a protocol that allows you to build an onchain identity with information about yourself, your social links, and even a decentralized website through something called the `contentHash`. This special record for ENS holds an IPFS CID reference that can be a hosted website.
+
+One thing that generally holds users back from utilizing it is the Ethereum mainnet fees associated with updating ENS records. Anytime the website changes it creates a new CID, and that means if you want your ENS site to be updated you have to write a new record on Mainnet and pay fees. While most people have tried to combat this with IPNS it has proven to be complicated and slow. This is one of the main reasons IPCM was made: simplify dynamic IPFS data using smart contracts. The only trick is that IPCM really only works well if you use a cheaper L2 chain like Base, and since ENS is on Ethereum mainnet, how can we connect the two? Not only that, but the `contentHash` record only supports a CID, not an IPCM contract address.
+
+This is where custom ENS resolvers come into play, and the design of [Orbiter’s ENS Resolver](https://github.com/orbiterhost/orbiter-resolver) to create a seamless experience for users. Whenever someone wants to read a record for an ENS name, a request is made to the public resolver that the name is using. These are smart contracts that can record the data and return it, but they are capable of so much more. Several years ago there was an ENSIP proposing a way to build an offchain gateway resolver. With this setup you could have requests made to an API instead of the onchain records, providing a way to create dynamic ENS records.
+
+With this approach Orbiter was able to build a custom ENS Resolver that does even more. When a record query is made towards the Orbiter Resolver it will first check the public resolver for matching records, then it will fallback to offchain records using the API endpoint. Orbiter’s API endpoint will make an RPC call to the Base contract for that name. This allows us to create a link between someone’s ENS name and their Orbiter site which is being managed through a Base contract.
+
+The best part about this is how we are able to completely abstract this from our users at Orbiter. If you want to link your ENS with your Orbiter site you don’t have to know any of this. You just have to follow two steps in our app:
+
+- Link your ENS name
+- Set the Orbiter Resolver as your ENS name resolver
+
+That simple! Check out the video below for a demo on how you can do this yourself.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/RSgahp1P-70?si=JkrbbB5FqjB2faZv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+Don’t take our word for it, go ahead and [sign up today](https://app.orbiter.host) and see how easy it is to not only host a site on Orbiter, but simultaneously link it with your ENS!
