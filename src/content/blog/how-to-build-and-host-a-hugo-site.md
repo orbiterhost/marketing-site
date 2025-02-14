@@ -3,6 +3,8 @@ title: "How To Build and Host a Hugo Site"
 description: "Hugo, built on top of Go, is one of the most popular static site generators on the market. Let's build a site and host it on Orbiter."
 pubDate: "Jan 22 2025"
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeiehuetnicapfy2q2xt3mej2ysos2bfg5pmn3hnaw7a2iahncsjhzy"
+author: "Justin Hunter"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq"
 ---
 Hugo is a static site generator that first launched in 2013. While many static site generators are built in Node.js, Hugo is built using Go. The open source project has gained a ton of traction over the years and currently has over 77,000 stars on Github.
 
@@ -13,13 +15,13 @@ Today, we’re going to build and host a Hugo site using Orbiter. Orbiter is the
 Since we’re going to build a site using Hugo and we’re going to host it using Orbiter, you’ll need a few things:
 
 1.  A free account on Orbiter. [You can sign up here](https://orbiter.host).
-    
+
 2.  [Install Hugo](https://gohugo.io/installation/macos/) (you may also need to install [Homebrew](https://brew.sh/) depending on your operating system and how you choose to install Hugo)
-    
+
 3.  A code editor like VSCode or Zed or really anything
-    
+
 4.  Git needs to be installed (this comes on most computers, but [here’s a guide if you need it](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
-    
+
 
 That’s it! Now, we can get into creating our Hugo site. Assuming you have already installed Hugo, let’s make open the terminal application on our computer and navigate to the folder where we keep our projects.
 
@@ -80,7 +82,7 @@ title = 'My First Post'
 
 ## Hello, Orbiter!
 
-This is a simple example post that will be part of my Hugo site. It will be hosted on [Orbiter](<https://orbiter.host>). 
+This is a simple example post that will be part of my Hugo site. It will be hosted on [Orbiter](<https://orbiter.host>).
 ```
 
 Now, we need to tell Hugo to build the site with new files. If your Hugo server is still running, you can stop it with `crtl + c`. Then, run this command:

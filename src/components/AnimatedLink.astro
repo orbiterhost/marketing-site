@@ -3,6 +3,7 @@ interface Props {
   href: string;
   children: any;
   className?: string;
+  bgClass?: string;
 }
 
 const { href, className = "", bgClass = "" } = Astro.props;
@@ -25,7 +26,7 @@ const { href, className = "", bgClass = "" } = Astro.props;
   </span>
   <span
     class:list={[
-    "absolute",
+      "absolute",
       "left-0",
       "bottom-0",
       "w-0",
@@ -35,7 +36,6 @@ const { href, className = "", bgClass = "" } = Astro.props;
       "duration-300",
       "ease-out",
       "group-hover:w-full",
-      bgClass
-      ]}
-  ></span>
+      bgClass,
+    ]}></span>
 </a>

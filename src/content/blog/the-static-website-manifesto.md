@@ -3,6 +3,8 @@ title: 'The Static Website Manifesto'
 description: 'Building websites used to be fun. Let’s bring back the joy of putting your work online. This is our manifesto.'
 pubDate: 'Dec 31 2024'
 heroImage: '/blog/html.png'
+author: "Justin Hunter"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq"
 ---
 Building websites used to be fun. Let’s bring back the joy of putting your work online. This is our manifesto.
 

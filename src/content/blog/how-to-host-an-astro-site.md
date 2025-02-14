@@ -3,6 +3,8 @@ title: "How To Host an Astro Site"
 pubDate: "Jan 07 2025"
 description: "Hosting a static React website is simple. This tutorial shows you all the steps, including setting up the site and uploading to Orbiter."
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeid5uepv7eg3eu4fcapz5tkumvsgz7d3qqusfs55pz2h4nq5qkcdjq"
+author: "Steve Simkins"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreifusckbeuxuih4o6p5un5j34selfg3uvt6ltqwbv4glsigekdx7lq"
 ---
 
 Over the years building on the web has become so complicated that it’s hard to keep up with all the tools and standards. There’s many of us who enjoyed the simplicity of working with HTML CSS and Javascript back in the day, but we also find ourselves needing some modern advancements to handle the stuff we don’t want to touch. Similarly I think the same group of people feel the same way about hosting, where we don’t want to mess with build pipelines and messy errors, but we also don’t want to use FTP to a server. This is where Astro and Orbiter meet in the best way possible.

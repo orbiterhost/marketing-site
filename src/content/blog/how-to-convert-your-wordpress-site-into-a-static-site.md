@@ -3,6 +3,8 @@ title: 'How To Convert Your WordPress Site Into a Static Site'
 description: 'If you have ever wanted to migrate your WordPress site to static HTML, this is your guide.'
 pubDate: 'Dec 31 2024'
 heroImage: '/blog/wordpress.jpg'
+author: "Justin Hunter"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq"
 ---
  WordPress has been a dominant player in the world of web hosting. As of December 2024, [43% of all websites were hosted on WordPress](https://www.wpzoom.com/blog/wordpress-statistics/). In recent months, WordPress has found itself mixed up in controversies, but even without those controversies, there’s always been an active pipeline of people who want to move their websites from the complexity of WordPress installations to static HTML.
 

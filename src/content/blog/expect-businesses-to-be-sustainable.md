@@ -3,6 +3,8 @@ title: "Expect Businesses To Be Sustainable"
 description: "Orbiter is competing in a well-established space, which means we have to be affordable while maintaining sustainability."
 pubDate: "Jan 25 2025"
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeibnlus6rne7vgqnszmvkmkuvkfhlcdakxgpjvvrqlt2cy667xbium?img-width=750"
+author: "Justin Hunter"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq"
 ---
 An alternative title to this post could be: Question unsustainable business practices.
 
@@ -11,9 +13,9 @@ I was chatting with an Orbiter user yesterday, and the topic of price in compari
 Everyone relying on a service should care about at least two things:
 
 1.  How sustainable is this business?
-    
+
 2.  How easy is it to exit and move to another platform should the business not be sustainable?
-    
+
 
 To answer the first question, we have to look at business model, funding, and costs. Let’s take a look at Netlify compared to Orbiter. This is not meant to take pot shots at Netlify, by the way. It’s simply a way to talk about economics.
 
@@ -24,30 +26,30 @@ To answer the first question, we have to look at business model, funding, and co
 Let’s compare the features listed on the free plan to Orbiter’s free plan:
 
 *   Single member seat ✅
-    
+
 *   Global edge network ✅
-    
+
 *   Live site previews 🟠
-    
+
 *   100GB bandwidth (Orbiter is currently unlimited, but that’s not likely to be sustainable)
-    
+
 *   300 build minutes (Orbiter doesn’t require any build time since you’re just uploading assets)
-    
+
 *   Instant rollbacks ✅
-    
+
 *   Secrets controller (Orbiter is focused entirely on static sites, so no secrets manager required)
-    
+
 *   Static assets ✅
-    
+
 *   Dynamic serverless functions ❌
-    
+
 
 Now, what’s missing from Netlify’s free list here are two things that many people take for granted:
 
 *   Custom domains
-    
+
 *   No Netlify branding (besides the domain)
-    
+
 
 Orbiter does not offer custom domains on free plans (yet - we have some ideas on how to do this in a limited way), and Orbiter includes a small banner at the bottom of free sites indicating that the site is powered by Orbiter. Let’s talk about each of these in turn.
 

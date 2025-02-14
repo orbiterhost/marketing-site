@@ -3,6 +3,8 @@ title: "Stop Paying For Build Minutes"
 description: "If you rely on local builds before deploying your site, you can avoid build minutes on someone else's server."
 pubDate: "Feb 02 2025"
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeid7yguf6hpu6f7b4nrqrygghsvgaylfra23u2ae5lnjoxrecfrayi?img-width=750"
+author: "Justin Hunter"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq"
 ---
 You might never hit a build limit with your hosting provider. But you could. Build limits are measured in minutes or hours, and as the name suggests, they are the number of minutes or hours that the hosting provider's server will spend building your app or website before they start charging you extra. To understand these limits, we need to look at the lifecycle of a project.
 

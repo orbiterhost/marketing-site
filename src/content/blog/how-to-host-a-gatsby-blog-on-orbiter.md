@@ -3,6 +3,8 @@ title: "How To Host a Gatsby Blog on Orbiter"
 pubDate: "Jan 19 2025"
 description: "Gatsby is one of the most popular static site frameworks on the market. Let's explore how to host a Gatsby blog on Orbiter."
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeiff42un3t63hyq6fkod7ceaivetubq5glu2ulgn2otdiid2l2hvbq"
+author: "Justin Hunter"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq"
 ---
 [Gatsby](https://www.gatsbyjs.com/docs) is one of the most popular static site generators available. Started in 2015 as an open source project, with a company being formed a few years later around hosting services, Gatsby has seen thousands of developers build sites on the React-based site generator. In 2023, Netlify acquired Gatsby and has been integrating the hosting services into their platform since.
 
@@ -13,11 +15,11 @@ While Netlify is a great solution for web application and static site hosting, i
 As mentioned, Gatsby is a static site generator built on top of React. We won’t need much, but you will want to make sure you have the following:
 
 1.  A free Orbiter account. [Sign up here](https://orbiter.host).
-    
+
 2.  Node.js v18 or later. This comes installed on most computers, but you can [download it if necessary here](https://nodejs.org/en).
-    
+
 3.  A code/text editor - I use VSCode and Steve uses Zed, but anything will do.
-    
+
 
 Now, we need to fire up the terminal application on our computer. For Mac that’s Terminal, and for Windows and Linux, it could be a few different things. Here’s a quick guide on finding and using yours. With ther terminal application open, change into whatever directory you want to keep your project:
 

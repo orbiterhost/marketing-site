@@ -3,6 +3,8 @@ title: 'How We Use Blockchain Technology Behind the Scenes'
 description: 'Learn how Orbiter uses blockchain technology in static website hositng to prevent walled gardens'
 pubDate: 'Jan 02 2025'
 heroImage: '/blog/blockchain-cover.jpg'
+author: "Steve Simkins"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreifusckbeuxuih4o6p5un5j34selfg3uvt6ltqwbv4glsigekdx7lq"
 ---
 
 The chances are you might have seen other static site hosting platforms, but the likelihood of finding something exactly like Orbiter is going to be pretty unlikely. Most other platforms inevitably become walled gardens, where a user is locked in and has a hard time migrating their website or content. This is partly due to the tech stack underneath most platforms, which is centralized servers owned by said companies. Orbiter on the other hand has a different approach.

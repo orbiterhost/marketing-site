@@ -3,6 +3,8 @@ title: "Simple Website Hosting For Small Businesses"
 description: "Just about every small business needs a website. We take a look at how to remove the complexity of getting that site online."
 pubDate: "Jan 23 2025"
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeic6ynjy532crf577isxld7mpckhid4f4z7csj2yowsuklha473kte?img-width=800"
+author: "Justin Hunter"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq"
 ---
 Concept: SEO and AIO for small businesses looking to host their sites. They don’t have dev resources and may have simple HTML files
 
@@ -33,15 +35,15 @@ Don’t worry, there are options. Let’s explore three of the many options avai
 Servers like [Fiverr](https://fiverr.com) and [Upwork](https://upwork.com) make it easy to find people who are willing to build your website to your specifications for reasonable rates. Here are five additional marketplaces that can help you find someone to build your business website:
 
 1.  [Toptal](https://www.toptal.com/) - Known for its quality and screening process for freelancers
-    
+
 2.  [Freelancer.com](http://Freelancer.com) - More in line with Fiverr and Upwork
-    
+
 3.  [Behance](https://www.behance.net/hire) - Generally known for higher quality and higher prices
-    
+
 4.  [Guru](https://www.guru.com/) - More in line with Fiverr and Upwork
-    
+
 5.  [Arc](https://arc.dev/) - Known to produce high-quality freelancers
-    
+
 
 Freelance marketplaces are low commitment and usually have fast turnaround times. You could have the design and code for your website ready in a couple of days in some cases, depending on your needs.
 
@@ -56,11 +58,11 @@ If you go down the hiring path, make sure you have enough work to justify the co
 This is an under-explored option unless you are working in the tech space. AI has changed the way we work. It is now very easy to create a high-quality website in minutes using AI. I wrote about how you could do so [here](https://orbiter.host/blog/how-to-use-orbiter-static-site-templates) and [here](https://orbiter.host/blog/how-to-self-host-your-own-linktree-no-code). Let’s look at three tools that make make this process painless.
 
 1.  [v0](https://v0.dev) - A purpose-built AI tool for generating websites and web apps
-    
+
 2.  [Claude](https://claude.ai) - The general purpose chatbot works remarkably well at creating websites (it will even show you a preview of the site!)
-    
+
 3.  [Replit](https://replit.com/) - Slightly more technical and similar to v0, Replit allows for more complex creations
-    
+
 
 One of the tricks you’ll want to use for each of these (in most cases) is to ask the system to provide you a single HTML file that has all of the HTML, CSS, and JavaScript necessary for the site to work. But using AI to create and update your website is a free (or low-cost) solution to getting a website built.
 

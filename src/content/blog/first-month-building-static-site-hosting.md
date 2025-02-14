@@ -3,6 +3,8 @@ title: "What We Learned In The First Month Of Building a Website Hosting Platfor
 description: "Orbiter was launched on January 1, 2025. This is a look back at the first month running the project."
 pubDate: "Feb 01 2025"
 heroImage: "https://cdn.orbiter.host/ipfs/bafkreiciwgz3tsuosumfeabsdooshbl7xvl3iien2klz6qgl3vvyniomzu"
+author: "Justin Hunter"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq"
 ---
 We launched Orbiter on January 1, 2025. That makes for a nice, clean starting point for a new venture. It also makes writing posts like this much easier. Let’s take a look back and what we accomplished in January.
 
@@ -13,37 +15,37 @@ For our first month, we grew more than we expected, though paid user growth flat
 Let’s start with the core stats:
 
 *   Total Users: 130
-    
+
 *   Paid Users: 6
-    
+
 *   Total Sites: 90
-    
+
 *   Total Site Versions: 336
-    
+
 
 Now, let’s look at traffic stats:
 
 ![Traffic](https://cdn.orbiter.host/ipfs/bafkreiciwgz3tsuosumfeabsdooshbl7xvl3iien2klz6qgl3vvyniomzu)
 
 *   Total Views: 1,640
-    
+
 *   Total Visits: 1,210
-    
+
 *   Total Visitors: 994
-    
+
 
 ![Requests](https://cdn.orbiter.host/ipfs/bafkreiesogcjqsbv5t7h7jyvrrpernfp7n5jnh2k4ahnkj5pbjt4ouogyy)
 
 Orbiter websites saw a ton of traffic. Keep in mind, this traffic includes bot traffic to websites deployed on Orbiter.
 
 *   Requests: 495,470
-    
+
 *   Bandwidth: 14.07 GB
-    
+
 *   Visits: 192, 710
-    
+
 *   Page Views: 194,550
-    
+
 
 Orbiter sites are the reason we exist, so it’s fun seeing the traffic numbers. We’ll be refining analytics soon and offering an analytics feature to customers as well. When we do so, we’ll be able to get better data that filters out bot traffic.
 
@@ -84,17 +86,17 @@ Just because Orbiter is easy doesn’t mean developers don’t want API access. 
 In January, we were still trying to figure out who, specifically, we should be marketing to. To be honest, we still are. So, there’s a lot of experimentation happening. Here are the highlights so far:
 
 *   Product Hunt Launch
-    
+
 *   Hacker News Launch
-    
+
 *   Indie Hackers Posts
-    
+
 *   Reddit Posts
-    
+
 *   Social Media Posts (LinkedIn, Warpcast, X, Threads, YouTube, TikTok)
-    
+
 *   Blog Posts (18 posts in 31 days)
-    
+
 
 What worked? A little bit of everything. We got a tiny boost from a Hacker News post about how we built Orbiter and you can see that for the month, Hacker News was the top referrer.
 

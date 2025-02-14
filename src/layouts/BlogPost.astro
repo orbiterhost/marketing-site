@@ -4,7 +4,6 @@ import BaseHead from "../components/BaseHead.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import AnimatedLink from "@/components/AnimatedLink.astro";
 import hero from "@/assets/hero.jpg";
-import logo from "@/assets/white_logo.png";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Footer from "@/components/Footer.astro";
@@ -12,7 +11,8 @@ import Nav from "@/components/Nav.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, heroImage, author, authorPfp } =
+  Astro.props;
 ---
 
 <html lang="en">
@@ -32,7 +32,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       class={`relative flex flex-col items-center justify-start min-h-[75px] w-full text-white gap-12`}
     >
       <div
-        class="w-full max-w-screen-xl flex items-center justify-between gap-2 my-12 mb-12 px-6"
+        class="w-full max-w-screen-xl flex items-center justify-between gap-2 sm:my-12 sm:mb-12 px-6"
       >
         <Nav />
       </div>
@@ -60,7 +60,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         }
       </Card>
       <h1 class="text-3xl font-bold mt-6">{title}</h1>
-      <FormattedDate date={pubDate} />
+      <div class="flex flex-row items-center gap-2 my-2">
+        <img src={authorPfp} alt={author} class="rounded-full h-10 w-10" />
+        <div class="flex flex-col">
+          <p class="font-bold">{author}</p>
+          <FormattedDate date={pubDate} />
+        </div>
+      </div>
       <Separator />
       <div class="mt-6 prose lg:prose-xl">
         <slot />
