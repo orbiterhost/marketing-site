@@ -1,0 +1,76 @@
+---
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
+---
+
+<div
+  class="flex flex-col gap-12 items-center justify-center min-h-[500px] w-full max-w-screen-lg mx-auto p-4"
+>
+  <div
+    class="flex sm:flex-row flex-col gap-8 justify-center items-center w-full"
+  >
+    <Card className="w-[300px]">
+      <CardHeader>
+        <CardTitle className="text-3xl"> Free </CardTitle>
+        <CardDescription> $0/month </CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-col justify-between gap-28">
+        <ul class="list-disc ml-4 space-y-2">
+          <li>Two projects</li>          
+          <li>1 collaborator</li>
+          <li>Free orbiter.website subdomain</li>
+        </ul>
+        <a class="w-full" href="https://app.orbiter.host">
+          <Button className="w-full"> Sign up </Button>
+        </a>
+      </CardContent>
+    </Card>
+
+    <Card className="w-[300px]">
+      <CardHeader>
+        <CardTitle className="text-3xl"> Launch </CardTitle>
+        <CardDescription> $7/month (when paid annually) </CardDescription>
+         <CardDescription> $9/month </CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-col justify-between gap-12">
+        <ul class="list-disc ml-4 space-y-2">
+          <li>5 projects</li>          
+          <li>2 collaborators</li>
+          <li>Custom domain</li>
+          <li>Remove Orbiter branding</li>
+          <li>Unlimited traffic</li>
+        </ul>
+        <a class="w-full" href="https://app.orbiter.host">
+          <Button className="w-full"> Sign up </Button>
+        </a>
+      </CardContent>
+    </Card>
+
+    <Card className="w-[300px]">
+      <CardHeader>
+        <CardTitle className="text-3xl"> Orbit </CardTitle>
+        <CardDescription> $16/month (when paid annually) </CardDescription>
+        <CardDescription> $19/month </CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-col justify-between gap-4">
+        <ul class="list-disc ml-4 space-y-2">
+          <li>Unlimited projects</li>          
+          <li>Unlimited collaborators</li>
+          <li>Custom domain</li>
+          <li>Analytics (soon)</li>
+          <li>Remove Orbiter branding</li>
+          <li>Unlimited traffic</li>
+        </ul>
+        <a class="w-full" href="https://app.orbiter.host">
+          <Button className="w-full"> Sign up </Button>
+        </a>
+      </CardContent>
+    </Card>
+  </div>
+</div>

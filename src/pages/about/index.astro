@@ -1,0 +1,36 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/components/Footer.astro";
+import hero from "@/assets/hero.jpg";
+import About from "@/components/About.astro";
+import Friends from "@/components/Friends.astro";
+import Nav from "@/components/Nav.astro";
+---
+
+<Layout
+  title="About"
+  description="Why Orbiter stands out from the rest when it come to static site hosting"
+>
+  <main>
+    <div
+      class={`relative flex flex-col items-center justify-start sm:min-h-[450px] min-h-[325px] w-full text-white gap-12`}
+    >
+      <Nav />
+
+      <img
+        src={hero.src}
+        alt="Hero background"
+        class="absolute inset-0 w-full h-full object-cover -z-10"
+      />
+
+      <div class="flex flex-col gap-2 items-center justify-center">
+        <h1 class="text-6xl sm:text-8xl flex items-center gap-2 relative z-10">
+          About
+        </h1>
+      </div>
+    </div>
+    <About />
+    <Friends />
+  </main>
+  <Footer />
+</Layout>

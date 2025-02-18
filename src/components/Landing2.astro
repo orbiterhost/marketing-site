@@ -1,0 +1,32 @@
+---
+import { Button } from "@/components/ui/button";
+import { FileDropzone } from "@/components/dropzone";
+import hero from "@/assets/hero.jpg";
+import Nav from "@/components/Nav.astro";
+---
+
+<div
+  class={`relative flex flex-col items-center justify-start min-h-screen w-full text-white gap-12 overflow-hidden`}
+>
+  <Nav />
+  <img
+    src={hero.src}
+    alt="Hero background"
+    class="absolute inset-0 w-full h-full object-cover -z-10"
+  />
+
+  <div
+    class="flex flex-col gap-2 items-center justify-center p-4 sm:mt-48 mt-6"
+  >
+    <h1 class="text-5xl sm:text-7xl font-bold text-center">
+      Your Site, Ready for Launch
+    </h1>
+    <h4 class="text-center text-lg sm:text-3xl">
+      Fast, secure static hosting at your fingertips
+    </h4>
+  </div>
+  <Button variant="secondary" className="relative z-10">
+    <a href="https://app.orbiter.host">Get Started</a>
+  </Button>
+  <FileDropzone client:load />
+</div>

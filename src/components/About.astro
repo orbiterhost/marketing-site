@@ -1,0 +1,167 @@
+---
+import { AvatarComponent } from "./avatar-component";
+import steve from "@/assets/steve.jpeg";
+import justin from "@/assets/justin.jpeg";
+---
+
+<div
+  class="flex flex-col w-full gap-6 max-w-screen-sm min-h-[800px] mx-auto p-4 mb-12"
+>
+  <div class="prose">
+    <h2>Let's bring back the fun of the web</h2>
+    <p>
+      Remember when the web used to be fun? Whether you were building a
+      professional site or something stupid like your newest celebrity crush
+      site, there was something freeing about being able to tweak some HTML then
+      quickly get your site online.
+    </p>
+    <p>
+      We lost much of this with increasingly complex workflows. To host a
+      website today, you have to jump through hoops such as:
+      <ul>
+        <li>Git</li>
+        <li>Github</li>
+        <li>Deployment pipelines</li>
+        <li>Build processes</li>
+        <li>Environment errors</li>
+      </ul>
+    </p>
+    <p>
+      Hosting a website should be as simple as uploading your assets. That's
+      exactly why we built Orbiter. We want the web to be fun (and fast) again.
+    </p>
+  </div>
+
+  <div class="flex flex-col sm:flex-row items-start gap-4">
+    <AvatarComponent client:load src={steve.src} alt="SS" fallbackText="SS" />
+    <div class="prose">
+      <h3>About Steve</h3>
+      <p>
+        Steve is a self taught developer and has a passion for developer tools
+        and documentation. He's currently the Head of Developer Relations at
+        Pinata where he designed <a target="_blank" href="https://ipcm.dev"
+          >IPCM</a
+        >, which happen to be the perfect recipe for Orbiter's infrastructure.
+        When he's not working or hacking away with Justin, Steve can be found in
+        the Tennessee hills taking photos, drinking specialty coffee, or just
+        spending time with his family.
+      </p>
+      <div class="flex items-center gap-2">
+        <a target="_blank" href="https://x.com/stevedylandev">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            ><path
+              fill="currentColor"
+              d="m17.687 3.063l-4.996 5.711l-4.32-5.711H2.112l7.477 9.776l-7.086 8.099h3.034l5.469-6.25l4.78 6.25h6.102l-7.794-10.304l6.625-7.571zm-1.064 16.06L5.654 4.782h1.803l10.846 14.34z"
+            ></path></svg
+          >
+        </a>
+        <a target="_blank" href="https://warpcast.com/stevedylandev.eth">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 1260 1260"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            ><g clip-path="url(#clip0_1_2)"
+              ><path
+                d="M947.747 1259.61H311.861C139.901 1259.61 0 1119.72 0 947.752V311.871C0 139.907 139.901 0.00541362 311.861 0.00541362H947.747C1119.71 0.00541362 1259.61 139.907 1259.61 311.871V947.752C1259.61 1119.72 1119.71 1259.61 947.747 1259.61Z"
+                fill="#472A91"></path><path
+                d="M826.513 398.633L764.404 631.889L702.093 398.633H558.697L495.789 633.607L433.087 398.633H269.764L421.528 914.36H562.431L629.807 674.876L697.181 914.36H838.388L989.819 398.633H826.513Z"
+                fill="white"></path></g
+            ><defs
+              ><clipPath id="clip0_1_2"
+                ><rect width="1259.61" height="1259.61" fill="white"
+                ></rect></clipPath
+              ></defs
+            ></svg
+          >
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/steve-simkins/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 128 128"
+            ><path
+              fill="#0076b2"
+              d="M116 3H12a8.91 8.91 0 0 0-9 8.8v104.42a8.91 8.91 0 0 0 9 8.78h104a8.93 8.93 0 0 0 9-8.81V11.77A8.93 8.93 0 0 0 116 3"
+            ></path><path
+              fill="#fff"
+              d="M21.06 48.73h18.11V107H21.06zm9.06-29a10.5 10.5 0 1 1-10.5 10.49a10.5 10.5 0 0 1 10.5-10.49m20.41 29h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75v32H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53z"
+            ></path></svg
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col sm:flex-row items-start gap-4">
+    <AvatarComponent client:load src={justin.src} alt="JH" fallbackText="JH" />
+    <div class="prose">
+      <h3>About Justin</h3>
+      <p>
+        Justin has been building products for the last decade. He is currently
+        heading up product at Pinata. Orbiter was an app he wanted to exist for
+        himself, so he partnered with Steve to build it. In his spare time, you
+        can catch Justin writing, watching baseball, or hanging out with family.
+      </p>
+      <div class="flex items-center gap-2">
+        <a target="_blank" href="https://x.com/polluterofminds">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            ><path
+              fill="currentColor"
+              d="m17.687 3.063l-4.996 5.711l-4.32-5.711H2.112l7.477 9.776l-7.086 8.099h3.034l5.469-6.25l4.78 6.25h6.102l-7.794-10.304l6.625-7.571zm-1.064 16.06L5.654 4.782h1.803l10.846 14.34z"
+            ></path></svg
+          >
+        </a>
+        <a target="_blank" href="https://warpcast.com/polluterofminds">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 1260 1260"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            ><g clip-path="url(#clip0_1_2)"
+              ><path
+                d="M947.747 1259.61H311.861C139.901 1259.61 0 1119.72 0 947.752V311.871C0 139.907 139.901 0.00541362 311.861 0.00541362H947.747C1119.71 0.00541362 1259.61 139.907 1259.61 311.871V947.752C1259.61 1119.72 1119.71 1259.61 947.747 1259.61Z"
+                fill="#472A91"></path><path
+                d="M826.513 398.633L764.404 631.889L702.093 398.633H558.697L495.789 633.607L433.087 398.633H269.764L421.528 914.36H562.431L629.807 674.876L697.181 914.36H838.388L989.819 398.633H826.513Z"
+                fill="white"></path></g
+            ><defs
+              ><clipPath id="clip0_1_2"
+                ><rect width="1259.61" height="1259.61" fill="white"
+                ></rect></clipPath
+              ></defs
+            ></svg
+          >
+        </a>
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/justin-hunter-b30a1b80/"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 128 128"
+            ><path
+              fill="#0076b2"
+              d="M116 3H12a8.91 8.91 0 0 0-9 8.8v104.42a8.91 8.91 0 0 0 9 8.78h104a8.93 8.93 0 0 0 9-8.81V11.77A8.93 8.93 0 0 0 116 3"
+            ></path><path
+              fill="#fff"
+              d="M21.06 48.73h18.11V107H21.06zm9.06-29a10.5 10.5 0 1 1-10.5 10.49a10.5 10.5 0 0 1 10.5-10.49m20.41 29h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75v32H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53z"
+            ></path></svg
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

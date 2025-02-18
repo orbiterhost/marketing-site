@@ -1,0 +1,122 @@
+---
+import AnimatedLink from "@/components/AnimatedLink.astro";
+import Footer from "@/components/Footer.astro";
+import Pricing from "@/components/Pricing.astro";
+import Layout from "@/layouts/Layout.astro";
+import logo from "@/assets/white_logo.png";
+import hero from "@/assets/hero.jpg";
+import { Card, CardContent } from "@/components/ui/card";
+
+const wallpapers = [
+  {
+    name: "Title Logo Color",
+    thumbnail:
+      "https://cdn.orbiter.host/ipfs/bafybeigut7vjrqx3ihs3cn24fjdmvgxidzggg7dvhmivodcq3yfu6bie3a/desktop_5k_title_color.jpg",
+    desktop:
+      "https://cdn.orbiter.host/ipfs/bafybeih7y74bayyxwvqblpsra2pdwuo73fag3a7jjbxhaxfc7xe6gvcwq4/desktop_5k_title_color.png",
+    mobile:
+      "https://cdn.orbiter.host/ipfs/bafybeih7y74bayyxwvqblpsra2pdwuo73fag3a7jjbxhaxfc7xe6gvcwq4/mobile_title_color.png",
+  },
+  {
+    name: "Title Logo BW",
+    thumbnail:
+      "https://cdn.orbiter.host/ipfs/bafybeigut7vjrqx3ihs3cn24fjdmvgxidzggg7dvhmivodcq3yfu6bie3a/desktop_5k_title_bw.jpg",
+    desktop:
+      "https://cdn.orbiter.host/ipfs/bafybeih7y74bayyxwvqblpsra2pdwuo73fag3a7jjbxhaxfc7xe6gvcwq4/desktop_5k_title_bw.png",
+    mobile:
+      "https://cdn.orbiter.host/ipfs/bafybeih7y74bayyxwvqblpsra2pdwuo73fag3a7jjbxhaxfc7xe6gvcwq4/mobile_title_bw.png",
+  },
+  {
+    name: "Logo Color",
+    thumbnail:
+      "https://cdn.orbiter.host/ipfs/bafybeigut7vjrqx3ihs3cn24fjdmvgxidzggg7dvhmivodcq3yfu6bie3a/desktop_5k_logo_color.jpg",
+    desktop:
+      "https://cdn.orbiter.host/ipfs/bafybeih7y74bayyxwvqblpsra2pdwuo73fag3a7jjbxhaxfc7xe6gvcwq4/desktop_5k_logo_color.png",
+    mobile:
+      "https://cdn.orbiter.host/ipfs/bafybeih7y74bayyxwvqblpsra2pdwuo73fag3a7jjbxhaxfc7xe6gvcwq4/mobile_logo_color.png",
+  },
+  {
+    name: "Logo BW",
+    thumbnail:
+      "https://cdn.orbiter.host/ipfs/bafybeigut7vjrqx3ihs3cn24fjdmvgxidzggg7dvhmivodcq3yfu6bie3a/desktop_5k_logo_bw.jpg",
+    desktop:
+      "https://cdn.orbiter.host/ipfs/bafybeih7y74bayyxwvqblpsra2pdwuo73fag3a7jjbxhaxfc7xe6gvcwq4/desktop_5k_logo_bw.png",
+    mobile:
+      "https://cdn.orbiter.host/ipfs/bafybeih7y74bayyxwvqblpsra2pdwuo73fag3a7jjbxhaxfc7xe6gvcwq4/mobile_logo_bw.png",
+  },
+];
+---
+
+<Layout title="Wallpapers" description="Official Wallpapers for Orbiter">
+  <main>
+    <div
+      class={`relative flex flex-col items-center justify-start sm:min-h-[450px] min-h-[250px] w-full text-white gap-12`}
+    >
+      <div
+        class="w-full max-w-screen-xl flex items-center justify-between gap-2 sm:my-12 my-4 sm:mb-24 px-6"
+      >
+        <a href="/">
+          <img class="sm:h-12 h-10" src={logo.src} alt="" />
+        </a>
+        <div class="flex items-center sm:gap-12 gap-4">
+          <AnimatedLink className="sm:text-xl text-md" href="/"
+            >Home</AnimatedLink
+          >
+          <AnimatedLink className="sm:text-xl text-md" href="/about"
+            >About</AnimatedLink
+          >
+          <AnimatedLink className="sm:text-xl text-md" href="/blog"
+            >Blog</AnimatedLink
+          >
+        </div>
+      </div>
+
+      <img
+        src={hero.src}
+        alt="Hero background"
+        class="absolute inset-0 w-full h-full object-cover -z-10"
+      />
+
+      <div class="flex flex-col gap-2 items-center justify-center">
+        <h1 class="text-6xl sm:text-8xl flex items-center gap-2 relative z-10">
+          Wallpapers
+        </h1>
+      </div>
+    </div>
+    <div
+      class="flex flex-col justify-center items-center gap-4 w-full mx-auto p-4"
+    >
+      {
+        wallpapers.map((wallpaper) => (
+          <Card className="sm:w-[400px] w-[300px] overflow-hidden">
+            <div class="aspect-video">
+              <img
+                class="h-full w-full object-cover"
+                src={wallpaper.thumbnail}
+                alt={wallpaper.name}
+              />
+            </div>
+            <div class="flex flex-col gap-2 p-4">
+              <h3 class="font-bold">{wallpaper.name}</h3>
+              <div class="flex gap-4">
+                <a
+                  href={wallpaper.desktop}
+                  class="text-blue-500 hover:underline"
+                >
+                  Desktop
+                </a>
+                <a
+                  href={wallpaper.mobile}
+                  class="text-blue-500 hover:underline"
+                >
+                  Mobile
+                </a>
+              </div>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+  </main>
+  <Footer />
+</Layout>

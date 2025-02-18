@@ -1,0 +1,114 @@
+---
+title: "How to Deploy to Orbiter With Git Hooks"
+pubDate: "Jan 11 2025"
+description: "Take control and automate your deployments to Orbiter using the Orbiter CLI and Git Hooks for a seemless experience"
+heroImage: "https://cdn.orbiter.host/ipfs/bafybeid5c6aockskzkdso6eiq3nozgxbtjuwmfbntt5kekl4ieokb7txgi"
+author: "Steve Simkins"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreifusckbeuxuih4o6p5un5j34selfg3uvt6ltqwbv4glsigekdx7lq"
+---
+
+We built Orbiter as a simple hosting solution in a world of failed CD/CI pipelines and complex build setups. It can even be an escape from Git as we recently just added Version support, making it easy to rollback or preview a previous version of your website. However with all of these features, we should also say you can still use Git in your workflow and even automate your Orbiter deployments. I (Steve) personally love working in the terminal and have written about it frequently, and it’s also why I love building CLIs. I built the Orbiter CLI as a tool for those like me who want the best of both worlds: simplicity with terminal access.
+
+One of those special terminal tools not many people are familiar with are [Git Hooks](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks). These are scripts you can run based on certain Git conditions, and in this post we’ll show you how you can easily make a Git Hook to deploy your Orbiter site after you commit some changes. Let’s get started!
+
+## Setup
+
+One simple thing you need here is Git installed on your machine, but most of them come with it out of the box. If not simply follow [this guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). If you haven’t already you should follow one of our guides to hosting on Orbiter, like this one for [React](https://orbiter.host/blog/how-to-host-a-react-site) or this one for [Astro](https://orbiter.host/blog/how-to-host-an-astro-site). Both of those initialize the repo with Git, but in the case they didn’t it’s very easy to do. Just run the following command:
+
+```bash
+git init
+```
+
+The other piece you’ll need is the Orbiter CLI which can be installed with just one command:
+
+```bash
+npm i -g orbiter-cli
+```
+
+Once you’ve downloaded the CLI run the login command with your provider of choice, `google` or `github`.
+
+```bash
+orbiter login -p google
+```
+
+Last thing you need to do is build your site and then upload it to Orbiter. You can do this with the following command:
+
+```bash
+npm run build && orbiter create -d mysite ./dist
+```
+
+The first one creates the `dist` folder, the second creates a site with the domain `mysite.orbiter.website`, and uses the `dist` folder we just built.
+
+## Creating the Hook
+
+Now that we have all our pieces in place we can build our Git hook. This one will do the following after we commit changes:
+
+- Build our site
+- Update our site with the new `dist` folder
+
+If you run `ls -a` in your terminal you should see something called `.git`; this is actually a folder with all of our Git information like commits and settings. In there by default is another folder called `hooks`, and that’s where we’ll create our post commit hook. Run the following command inside your terminal:
+
+```bash
+touch .git/hooks/post-commit
+```
+
+Now you’ll want to open this new file with your text editor of choice. Once you open the blank file paste in the following code:
+
+```bash
+#!/bin/bash
+
+# Path: .git/hooks/post-commit
+# Make sure to make this file executable: chmod +x .git/hooks/post-commit
+
+echo "Running orbiter update..."
+# Run the CLI command here
+npm run build && orbiter update -d <your-domain> dist
+
+# Alternatively you can use the --siteId instead
+# orbiter update -s <site-id> dist
+
+# Check if the command was successful
+if [ $? -eq 0 ]; then
+    echo "Orbiter update completed successfully"
+    exit 0
+else
+    echo "Orbiter update failed"
+    exit 1
+fi
+```
+
+This is a pretty simple bash script that will run a few commands:
+
+- `npm run build` - Creates a `dist` folder for the latest version of our site
+- `orbiter update -d <your-domain> dist` - Updates our site using the new `dist` folder. We set which site using the -d flag followed by our subdomain. For instance, if I have a site called [`astro.orbiter.website`](http://astro.orbiter.website) then I would use `-d astro`.
+
+Make sure these are both adjusted for your setup, whether you’re using Yarn instead of NPM or your build folder is name something other than `dist`. Also of course make sure you update the domain! Save your changes then in the terminal run this command:
+
+```bash
+sudo chmod +x .git/hooks/post-commit
+```
+
+This will turn your Git hook into an executable bash script. Now we can test it out! Make a change to your website then commit it like so:
+
+```bash
+git add .
+
+git commit -m "Testing Git hooks!"
+```
+
+Then you should see the build compiling and the update to your website made!
+
+## Wrapping Up
+
+Git is really powerful, and there’s a reason it’s become the default version managing software used around the world. While there’s a lot you can do with it, for most people you may just want a simple way to undo a deployment or mistake you made to restore your website. In which case definitely check out our versions feature which makes it a breeze to update your site to an older version.
+
+<video
+  autoPlay
+  muted
+  loop
+  playsinline
+  className="not-content"
+  src="https://cdn.orbiter.host/ipfs/bafybeid2k3jkgim4h3pgjk3c7mcoxa4lf6kxblc57xnypjkf352bxgaaza"
+></video>
+
+Want to give it a shot? Be sure to [try it out on one of our paid plans today](https://app.orbiter.host)!

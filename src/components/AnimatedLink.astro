@@ -1,0 +1,41 @@
+---
+interface Props {
+  href: string;
+  children: any;
+  className?: string;
+  bgClass?: string;
+}
+
+const { href, className = "", bgClass = "" } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    "relative",
+    "inline-block",
+    "text-white",
+    "transition-colors",
+    "duration-300",
+    "group",
+    className,
+  ]}
+>
+  <span class="relative z-10">
+    <slot />
+  </span>
+  <span
+    class:list={[
+      "absolute",
+      "left-0",
+      "bottom-0",
+      "w-0",
+      "h-0.5",
+      "bg-white",
+      "transition-all",
+      "duration-300",
+      "ease-out",
+      "group-hover:w-full",
+      bgClass,
+    ]}></span>
+</a>

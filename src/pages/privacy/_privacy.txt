@@ -1,0 +1,180 @@
+Effective Date: December 30, 2024
+Introduction
+Mind Pollution, LLC. (“Orbiter,” “we,” “our,” or “us”) respects the privacy of your information. This Privacy Policy is designed to assist you in understanding how we collect, use and safeguard the information you provide to us in using our website (the “Site”) and the services provided through our Site (the “Services”).
+
+From time to time, we may change this Privacy Policy. If we do, we will post an amended version on this webpage. If we make material changes to our Privacy Policy, we may also notify you by other means, such as sending an email or posting a notice on our home page. If required by applicable data protection laws, we will obtain your consent to any material changes. Please review this Privacy Policy periodically.
+
+Please also refer to our Terms and Conditions regarding the proper usage of the Site and Services.
+
+This Privacy Policy covers the following topics:
+What is Orbiter?
+Personal Data We Collect
+How We Use Your Personal Data
+How We Share Your Personal Data
+Cookies and Other Tracking Technologies
+International Data Transfers
+“Do Not Track” Signals
+Advertising and Marketing Choices
+Third Party Links
+Security
+Children’s Privacy
+Your Choices and Rights
+Your Personal Data and Your Rights –United States Only
+Your Personal Data and Your Rights –Europe and the United Kingdom Only
+How to Contact Us  
+1. What is Orbiter?
+Orbiter is a website hosting platform designed to make web development easy again. Orbiter operates both as a data controller and a data processor of personal data collected from residents of the European Economic Area or the United Kingdom. Orbiter operates as the data controller of the personal data that it collects on the Site and operates as a data processor of any personal data that users provide through the Orbiter platform.
+
+2. Personal Data We Collect
+Through your use of the Site and Services, we will collect personal data from you. For purposes of this Privacy Policy, “Personal Data” refers to any information relating to an identified or identifiable natural person that we maintain in an accessible form.
+
+Information You Provide
+When you use the Site or Services, you may voluntarily provide us with the following types of Personal Data:
+
+Sign Up. To sign up for an account, you will provide us with your name and email address, and you will create a unique password for future logins. You will also provide us with your payment information including your credit card information. We use Stripe, a third-party payment processor. Please review Stripe’s privacy policy here.
+Subscribe to Our Newsletter. To subscribe to our newsletter, you will provide us with your email address.
+Job Applications. To apply for a job, you will provide us with your name, email address, phone number, pronouns, and any other information you choose to provide in your resume or cover letter.
+Contact Us. To contact us through the Site, you will provide us with your name, email address, and any other information you choose to provide in your message.   
+Information as You Navigate Our Site and Services
+We automatically collect certain Personal Data through your use of the Site and Services, including the Application. We will automatically collect certain Personal Data, such as the following:
+
+Usage Information. For example, the pages on the Site you access, the frequency of access, and what you click on while on the Site.
+Device Information. For example, hardware model, operating system, application version number, and browser.
+Mobile Device Information. Aggregated information about whether the Site is accessed via a mobile device or tablet, the device type, and the carrier.
+Location Information. Location information from Site visitors on a city-regional basis.
+
+Third Party Information
+In some cases, we may receive certain Personal Data from you about a third party. For example, when you contact us, you may provide the name and email address of a third party. If you submit any Personal Data about another individual to us, you are responsible for making sure that you have the authority to do so and to allow us to use their Personal Data in accordance with this Privacy Policy.
+
+3. How We Use Your Personal Data
+We use the Personal Data we collect to provide the Services to you, to improve our Services and Site, and to protect our legal rights. In addition, we may use the Personal Data we collect to:
+Register your account;
+Subscribe you to our newsletter;
+Process your job application;
+Contact you regarding our products and services that we feel may be of interest to you;
+Communicate with you about our Site or Services or to inform you of any changes to our Site or Services;
+Provide customer care and support;
+Maintain and improve our Site and Services;
+Investigate, prevent, or take action regarding illegal activities, suspected fraud, situations involving potential threats to the physical safety of any person, or violations of our terms of use;
+Defend our legal rights and the rights of others;
+Efficiently maintain our business; and
+Comply with applicable law.  
+4. How We Share Your Personal Data
+We may share the information that we collect about you in the following ways:
+With service providers who perform data services on our behalf (e.g., email, hosting, maintenance, backup, analysis, etc.);
+To service providers to prepare, deploy and analyze advertising content;
+To the extent that we are required to do so by law;
+In connection with any legal proceedings or prospective legal proceedings;
+To establish, exercise, or defend our legal rights, including providing information to others for the purposes of fraud prevention;
+To any person who we reasonably believe may apply to a court or other competent authority for disclosure of that Personal Data where, in our reasonable opinion, such court or authority would be reasonably likely to order disclosure of that Personal Data;
+To any other person or entity as part of any business or asset sale, equity transaction, merger, acquisition or in preparation for any of these events; and
+To any other person or entity where you consent to the disclosure.  
+5. Cookies and Other Tracking Technologies
+Like many other companies, we use cookies and other tracking technologies (such as pixels and web beacons). To learn more about how we use cookies and to change your cookie settings, please see our Cookie Policy.
+
+6. International Data Transfers
+We operate internationally and transfer information to the United States for the purposes described in this policy. The United States may have privacy and data protection laws that differ from, and are potentially less protective than, the laws of your country. Your Personal Data can be subject to access requests from governments, courts, or law enforcement in the United States according to the laws of the United States.
+
+For any transfers of Personal Data from the European Economic Area (EEA), Switzerland or the United Kingdom that we make to other entities as described in this Privacy Policy, we use appropriate safeguards to ensure for the lawful processing and transfer of the Personal Data, including, when appropriate, the use of standard contractual clauses approved by the European Commission. To obtain a copy of the safeguards, contact us at team@orbiter.host.
+
+7. “Do Not Track” Signals
+Some internet browsers incorporate a “Do Not Track” feature that signals to websites you visit that you do not want to have your online activity tracked. Given that there is not a uniform way that browsers communicate the “Do Not Track” signal, the Site does not currently interpret, respond to or alter its practices when it receives “Do Not Track” signals.
+
+8. Advertising and Marketing Choices
+Depending on your location (and reflecting applicable law), you may have been asked to indicate your preferences, provide us with your consent regarding the receipt of such information from us, and indicate how you would like to receive it.
+
+Wherever you are located, we will send you marketing communications based on any preferences you may have expressed.
+
+We only want to send you information in which you are interested. If you do not want to receive these communications or would like to understand more about other unsubscribe options, please contact us as set out in the “How to Contact Us” section below.
+
+For email communications, you can opt-out and/or manage your preferences by clicking on the unsubscribe link provided at the bottom of any email you receive from us. You also may submit a request to us at team@orbiter.host. If we call you with information you do not want to receive, you can advise us of this during the telephone call.
+
+9. Third Party Links
+The Site and Services may contain links that will let you leave the Site and Services and access another website. Linked websites are not under our control. Except as stated below, this Privacy Policy applies solely to Personal Data that is acquired on this Site and Services. We accept no responsibility or liability for these other websites.
+
+10. Security
+We maintain commercially reasonable security measures to protect the Personal Data we collect and store from loss, misuse, destruction, or unauthorized access. However, no security measure or modality of data transmission over the Internet is 100% secure. Although we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee absolute security.
+
+11. Children’s Privacy
+The Site and Services are not intended for children under 16 years of age. We do not knowingly collect, use, or disclose personal information from children under 16.
+
+12. Your Choices and Rights
+Depending on the jurisdiction in which you are located, you may have additional rights with respect to your Personal Data. We discuss some of those jurisdictions and rights below. For example, you may have the rights to access, delete, update, or correct your information. You also may have the right to object to or opt out of direct marketing from us. If you would like to exercise your legal rights, please contact us at team@orbiter.host. We will process your request in accordance with any applicable legal requirements.
+
+13. Your Personal Data and Your Rights – United States Only
+
+California Shine the Light Law
+We do not disclose personal information obtained through our Site or Services to third parties for their direct marketing purposes. Accordingly, we have no obligations under California Civil Code § 1798.83.
+
+Notice to Nevada Residents
+Nevada law allows Nevada residents to opt-out of the sale of certain types of personal information. Subject to a number of exceptions, Nevada law defines “sale” to mean the exchange of certain types of personal information for monetary consideration to another person. We do not currently sell personal information as defined in the Nevada law. However, if you are a Nevada resident, you still may submit a verified request to opt-out of sales and we will record your instructions and incorporate them in the future if our policy changes. Opt-out requests may be sent to us at team@orbiter.host.
+
+14. Your Personal Data and Your Rights –Europe and the United Kingdom Only
+
+If you are in a country in the European Economic Area (EEA) or in the United Kingdom, you are entitled to the following explanation of the legal bases we rely on to process your Personal Data and a description of your privacy rights.
+
+Legal Bases for Processing Your Personal Data
+The legal basis for collecting and using the Personal Data described above will depend on the Personal Data concerned and the specific context in which we collect it.
+
+Consent
+We may process your Personal Data based on your consent such as when you create an account or when you ask us to send certain kinds of marketing communications. You have the right to withdraw your consent at any time without affecting the lawfulness of the processing based on consent before its withdrawal.
+
+Our Legitimate Interests
+We may process your Personal Data if doing so is necessary for our legitimate interests and your rights as an individual do not override those legitimate interests. For example, when we process your Personal Data to carry out fraud prevention activities and activities to increase network and information security, to market directly to you, to expand our business activities and to improve our services and the content and functionality of our Site.
+
+To Perform a Contract
+We may process your Personal Data to administer and fulfill contractual obligations to you.
+
+To Enable Us to Comply with a Legal Obligation
+We may process your Personal Data to comply with legal obligations to which we are subject. This may include any requirement to produce audited accounts and to comply with legal process.
+
+Necessary for the Exercise or Defense of Legal Claims
+If you bring a claim against us or we bring a claim against you, we may process your Personal Data in relation to that claim.
+
+If you have any questions about or need further information concerning the legal basis on which we collect and use your Personal Data for any specific processing activity, please contact us using the “How to Contact Us” section below.
+
+Your Rights
+Access Your Personal Data
+You have the right to obtain from us confirmation as to whether or not we are processing Personal Data about you and, if so, the right to be provided with the information contained in this Privacy Policy. You also have the right to receive a copy of the Personal Data undergoing processing.
+
+Rectify Your Personal Data
+You have the right to ask us to rectify any inaccurate Personal Data about you and to have incomplete Personal Data completed.
+
+Restrict Our Use of Your Personal Data
+You have the right to ask us to place a restriction on our use of your Personal Data if one of the following applies to you:
+You contest the accuracy of the information that we hold about you, while we verify its accuracy;
+We have used your information unlawfully, but you request us to restrict its use instead of erasing it;
+We no longer need the information for the purpose for which we collected it, but you need it to deal with a legal claim; or
+You have objected to us using your information, while we check whether our legitimate grounds override your right to object.  
+Object to Our Use of Your Personal Data
+You have the right to object to our use of your Personal Data where our reason for using it is based on our legitimate interests or your consent (rather than when the reason for using it is to perform an obligation due to you under a contract with us).
+
+Delete Your Personal Data
+You can ask us to delete your Personal Data if:
+We no longer need it for the purposes for which we collected it;
+We have been using it with no valid legal basis;
+We are obligated to erase it to comply with a legal obligation to which we are subject;
+We need your consent to use the information and you withdraw consent;
+You object to us processing your Personal Data where our legal basis for doing so is our legitimate interests and there are no overriding legitimate grounds for the processing.
+However, this right is not absolute. Even if you make a request for deletion, we may need to retain certain information for legal or administrative purposes, such as record keeping, maintenance of opt-out requirements, defending or making legal claims, or detecting fraudulent activities. We will retain information in accordance with the “How Long Is Your Personal Data Kept” section below.
+
+If you do exercise a valid right to have your Personal Data deleted, please keep in mind that deletion by third parties to whom the information has been provided might not be immediate and that the deleted information may persist in backup copies for a reasonable period (but will not be available to others).
+
+Transfer Your Personal Data to Another Service Provider
+You may request that we transfer some of the Personal Data you have provided to you or another service provider in electronic copy. This applies to Personal Data we are processing to service a contract with you and to Personal Data we are processing based on your consent.
+
+To exercise any of these rights, please contact us as described in the “How to Contact Us” section below.
+
+Make a Complaint
+If you have any concerns or complaints regarding our processing of your Personal Data, please contact us as described in the “How to Contact Us” section below and we will do our best to answer any question and resolve any complaint to your satisfaction.
+
+If, for whatever reason, you feel we do not meet the standards you expect of us, you are also entitled to make a complaint to your local supervisory authority:
+EU Data Protection Authorities (DPAs)
+Swiss Federal Data Protection and Information Commissioner (FDPIC)
+Information Commissioner’s Office (United Kingdom)
+
+How Long Is Your Personal Data Kept?
+We will retain your Personal Data for as long as necessary to fulfill the purposes for which we collect it and as set out in this Privacy Policy and for the purpose of satisfying any legal, accounting, or reporting requirements that apply to us.
+
+15. How to Contact Us
+For questions or concerns about our privacy policies or practices, please contact us by email at team@orbiter.host.
