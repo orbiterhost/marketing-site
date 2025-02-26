@@ -1,0 +1,98 @@
+---
+title: "How to Host a Static Next.js App"
+pubDate: "Feb 26 2025"
+description: "Next.js isn't just for servers; check out how you can host a static version of your Next.js frontend on Orbiter!"
+heroImage: "https://cdn.orbiter.host/ipfs/bafybeiafbmiunoo6tv3d5hxd4zqmrr6vd72rymsmcij6ickxkzpitslwly"
+author: "Steve Simkins"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreifusckbeuxuih4o6p5un5j34selfg3uvt6ltqwbv4glsigekdx7lq"
+---
+
+Next.js is by far one of the most popular frontend frameworks out there. It provides a React like experience but with the ability to add server side API routes and rendering. Despite being primarily server side rendered, you can still host a Next.js app on Orbiter as a static site! In this post we’ll show you how to do just that and demonstrate just how easy it is. Let’s get started!
+
+Of course you will need all the basics:
+
+- Node.js installed on your machine
+- A text editor like VSCode (or Zed if you’re cool ;) )
+- [A free Orbiter account](https://app.orbiter.website)
+
+Once you’re ready to go let’s run the following command in the terminal:
+
+```bash
+npx create-next-app@latest my-site
+```
+
+From there you can select your preferences; for me that’s gonna all the defaults to keep it simple. Once it’s finished installing dependencies run `cd my-site` and open the project in your text editor. Run `npm run dev` to preview the site, and just for fun let’s edit the `app/page.tsx` file. You’ll see this near the top:
+
+```tsx
+<Image
+  className="dark:invert"
+  src="/next.svg"
+  alt="Next.js logo"
+  width={180}
+  height={38}
+  priority
+/>
+```
+
+Replace that with this header:
+
+```tsx
+<h1 className="text-7xl">ORBITER</h1>
+```
+
+Cool 😎 Now let’s launch our site into orbit. To do that we’ll need to edit the `next.config.ts` file and replace it with this code:
+
+```tsx
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  output: 'export'
+};
+
+export default nextConfig;
+```
+
+In here we’re adding the `output` as `'export'` so we can make a static build folder. Once you edit and save that file, run the following command to build the site:
+
+```bash
+npm run build
+```
+
+This should result in a folder called `out` that has all of our HTML, CSS, and JS. From here there’s a few ways we could deploy our site to Orbiter. One simple way is by logging into [app.orbiter.host](http://app.orbiter.host), clicking “Upload Site” in the top right, select that `out` folder, give it a name, then click “Create!”
+
+<video
+  autoPlay
+  muted
+  loop
+  playsinline
+  preload
+  class="not-content"
+  className="w-full aspect-video"
+  src="https://cdn.orbiter.host/ipfs/bafybeigzi6gyh6r63marefz35pkqlrvstmpu32hda6ojrhgytlz25jt24e"
+></video>
+
+For me personally I love using the terminal and CLIs, and thankfully Orbiter has a dead simple CLI to make deployments a breeze. First install the CLI using this command:
+
+```bash
+npm i -g orbiter-cli
+```
+
+Then authorize the CLI with one of the two options:
+
+```bash
+# Login with an OAuth provider
+orbiter login -p google # or github
+
+# Use an API key from https://app.orbiter.host/api-keys
+orbiter auth
+```
+
+All that’s left is to run the `deploy` command!
+
+```bash
+orbiter deploy
+```
+
+This will prompt you to create a new site, enter in the subdomain you want to use (e.g. `my-site.orbiter.website`), ask for your build command (e.g. `npm run build`), and your build directory, which in our case will be `out`. After running this it will save the site info in `orbiter.json` at the root of your project, so whenever you have an update you can just run `orbiter deploy` again without having to fill anything out!
+
+There you have it: a Next.js app hosted on IPFS and Base, without any fuss or waiting for builds to finish in the cloud. That’s the beauty of Orbiter! If you haven’t already, give Orbiter a shot for your next project (pun intended) and see why more and more developers are trusting it every day!
