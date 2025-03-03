@@ -66,10 +66,34 @@
 
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 }
 
 .grecaptcha-badge {
   visibility: hidden !important;
   opacity: 0 !important;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Add this to ensure the stars are visible against the black background */
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+.star:nth-child(odd) {
+  animation-delay: 1.5s;
 }

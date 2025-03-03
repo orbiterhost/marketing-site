@@ -29,11 +29,11 @@ export function CLI() {
 
   return (
     <div
-      className="flex flex-col gap-12 items-center justify-center min-h-screen sm:min-h-[600px] sm:my-12 w-full mx-auto"
+      className="relative z-10 text-white flex flex-col gap-12 items-center justify-center sm:min-h-[600px] sm:my-0 w-full mx-auto"
     >
       <div className="max-w-screen-lg flex flex-col gap-12 items-center justify-center">
         <div className="flex flex-col gap-2 justify-center items-center mx-4 text-center">
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          <h1 className="text-white scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             Orbiter CLI
           </h1>
           <h3 className="sm:text-xl text-lg">
