@@ -1,27 +1,15 @@
 import { Button } from "./ui/button"
 import { Check, Copy, Github } from "lucide-react"
-import { useState, useEffect } from "react"
-import { codeToHtml } from 'shiki'
+import { useState } from "react"
 
 
 export function CLI() {
   const [isCopied, setIsCopied] = useState(false)
-  const [highlightedCode, setHighlightedCode] = useState('')
-
-  useEffect(() => {
-    const highlight = async () => {
-      const code = await codeToHtml("npm i -g orbiter-cli", {
-        lang: 'bash',
-        theme: 'poimandres'
-      })
-      setHighlightedCode(code)
-    }
-    highlight()
-  }, [])
+  const codeText = "npm i -g orbiter-cli";
 
   const handleCopy = () => {
     setIsCopied(true)
-    navigator.clipboard.writeText("npm i -g orbiter-cli");
+    navigator.clipboard.writeText(codeText);
     setTimeout(() => {
       setIsCopied(false)
     }, 2000);
@@ -41,17 +29,18 @@ export function CLI() {
           </h3>
 
         </div>
-        <div className="flex items-center justify-between py-3 px-4 bg-[#1C1E28] rounded-md">
+        <div className="flex items-center justify-between py-3 px-4 bg-primary rounded-md">
           <div
-            className="font-mono truncate max-w-[300px]"
-            dangerouslySetInnerHTML={{ __html: highlightedCode }}
-          />
+            className="font-mono truncate max-w-[300px] text-white"
+          >
+            {codeText}
+          </div>
           <Button variant="link" size="sm" onClick={handleCopy}>
-            {isCopied ? <Check className="h-4 w-4 text-[#91B4D5]" /> : <Copy className="h-4 w-4 text-[#91B4D5]" />}
+            {isCopied ? <Check className="h-4 w-4 text-white" /> : <Copy className="h-4 w-4 text-white" />}
           </Button>
         </div>
         <div className="flex gap-4">
-          <Button>
+          <Button variant="secondary">
             <a className="flex items-center gap-2" target="_blank" rel="noreferrer" href="https://docs.orbiter.host/cli">
               Docs</a>
           </Button>
