@@ -9,7 +9,7 @@ const CompetitorDisplay = () => {
   // Function to set wrapper width based on widest competitor name
   const setWrapperWidth = () => {
     if (!wrapperRef.current) return;
-    
+
     // Create temporary span to measure text width
     const tempSpan = document.createElement('span');
     tempSpan.style.visibility = 'hidden';
@@ -17,7 +17,7 @@ const CompetitorDisplay = () => {
     tempSpan.style.fontSize = window.getComputedStyle(wrapperRef.current).fontSize;
     tempSpan.style.fontWeight = window.getComputedStyle(wrapperRef.current).fontWeight;
     document.body.appendChild(tempSpan);
-    
+
     // Find the widest text
     let maxWidth = 0;
     competitors.forEach(text => {
@@ -25,7 +25,7 @@ const CompetitorDisplay = () => {
       const width = tempSpan.getBoundingClientRect().width;
       maxWidth = Math.max(maxWidth, width);
     });
-    
+
     // Set minimum width with some padding
     wrapperRef.current.style.minWidth = (maxWidth + 20) + 'px';
     document.body.removeChild(tempSpan);
@@ -35,21 +35,21 @@ const CompetitorDisplay = () => {
   useEffect(() => {
     // Initial setup
     setWrapperWidth();
-    
+
     // Set up rotation interval
     const rotationTimer = setInterval(() => {
       setFading(true);
-      
+
       // After fade out animation completes, change text and fade back in
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % competitors.length);
         setFading(false);
       }, 500);
     }, 3000);
-    
+
     // Handle window resize
     window.addEventListener('resize', setWrapperWidth);
-    
+
     // Clean up
     return () => {
       clearInterval(rotationTimer);
@@ -59,7 +59,7 @@ const CompetitorDisplay = () => {
 
   return (
     <span className="competitor-wrapper text-center" ref={wrapperRef}>
-      <span 
+      <span
         className={`competitor ${fading ? 'fade-out' : 'fade-in'}`}
       >
         {competitors[currentIndex]}
