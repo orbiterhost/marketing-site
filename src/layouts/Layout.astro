@@ -1,6 +1,5 @@
 ---
 import "../styles/globals.css";
-import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -30,7 +29,6 @@ const {
       src="https://cloud.umami.is/script.js"
       data-website-id="65f5e824-847a-4ead-862a-c6b62a35c856"></script>
     <meta name="generator" content={Astro.generator} />
-    <ClientRouter />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
@@ -53,8 +51,6 @@ const {
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
-
-    <ClientRouter />
   </head>
   <body>
     <slot />

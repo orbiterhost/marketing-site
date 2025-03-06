@@ -6,6 +6,8 @@ import hero from "@/assets/hero.jpg";
 import logo from "@/assets/white_logo.png";
 import Footer from "@/components/Footer.astro";
 import tocContent from "./_toc.txt?raw";
+import PageWrapper from "@/components/PageWrapper.astro";
+import Nav from "@/components/Nav.astro";
 
 const SITE_TITLE = "Terms and Conditions";
 const SITE_DESCRIPTION = "Terms and Conditions for Orbiter";
@@ -17,37 +19,26 @@ const SITE_DESCRIPTION = "Terms and Conditions for Orbiter";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main>
-      <div
-        class={`relative flex flex-col items-center justify-start sm:min-h-[450px] min-h-[250px] w-full text-white gap-12`}
-      >
+    <PageWrapper>
+      <main>
         <div
-          class="w-full max-w-screen-xl flex items-center justify-between gap-2 sm:my-12 my-4 sm:mb-24 px-6"
+          class={`relative z-10 flex flex-col items-center justify-start mb-10 w-full text-white gap-12`}
         >
-          <a href="/">
-            <img class="h-12" src={logo.src} alt="" />
-          </a>
-          <AnimatedLink className="text-xl" href="/">Home</AnimatedLink>
-        </div>
+          <Nav />
 
-        <img
-          src={hero.src}
-          alt="Hero background"
-          class="absolute inset-0 w-full h-full object-cover -z-10"
-        />
-
-        <div class="flex flex-col gap-2 items-center justify-center">
-          <h1
-            class="text-6xl sm:text-7xl flex items-center gap-2 relative z-10"
-          >
-            Terms & Conditions
-          </h1>
+          <div class="flex flex-col gap-2 items-center justify-center">
+            <h1
+              class="text-6xl sm:text-7xl flex items-center gap-2 relative z-10"
+            >
+              Terms & Conditions
+            </h1>
+          </div>
         </div>
-      </div>
-      <div class="prose lg:prose-xl mx-auto px-6 py-12 whitespace-pre-wrap">
-        {tocContent}
-      </div>
-    </main>
-    <Footer />
+        <div class="text-white prose lg:prose-xl mx-auto px-6 py-12 whitespace-pre-wrap">
+          {tocContent}
+        </div>
+      </main>
+      <Footer />
+    </PageWrapper>
   </body>
 </html>

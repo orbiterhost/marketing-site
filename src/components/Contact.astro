@@ -6,12 +6,14 @@ import { Button } from "./ui/button";
 ---
 
 <div
-  class="flex flex-col gap-6 items-center justify-center min-h-screen sm:min-h-[700px] sm:my-12 w-full max-w-screen-lg mx-auto px-4"
+  class="relative z-10 flex flex-col gap-6 items-center justify-center min-h-screen sm:min-h-[700px] sm:my-4 w-full max-w-screen-lg mx-auto px-4"
 >
-  <h1 class="text-3xl font-extrabold tracking-tight lg:text-5xl text-center">
+  <h1
+    class="text-white text-3xl font-extrabold tracking-tight lg:text-5xl text-center"
+  >
     Got questions? Let's talk!
   </h1>
-  <p class="text-center">
+  <p class="text-center text-white">
     Orbiter is actively being built by <br class="sm:hidden" /> Justin Hunter and
     Steve Simkins
   </p>
@@ -20,6 +22,6 @@ import { Button } from "./ui/button";
     <AvatarComponent client:load src={steve.src} alt="SS" fallbackText="SS" />
   </div>
   <a href="mailto:justin@orbiter.host,steve@orbiter.host">
-    <Button>Contact</Button>
+    <Button variant="secondary">Contact</Button>
   </a>
 </div>

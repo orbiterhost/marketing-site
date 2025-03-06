@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Footer from "@/components/Footer.astro";
 import Nav from "@/components/Nav.astro";
+import PageWrapper from "@/components/PageWrapper.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -28,49 +29,51 @@ const { title, description, pubDate, heroImage, author, authorPfp } =
     </style></head
   >
   <body>
-    <div
-      class={`relative flex flex-col items-center justify-start min-h-[75px] w-full text-white gap-12`}
-    >
+    <PageWrapper>
       <div
-        class="w-full max-w-screen-xl flex items-center justify-between gap-2 sm:my-12 sm:mb-12 px-6"
+        class={`relative z-10 flex flex-col items-center justify-start min-h-[75px] w-full text-white gap-12`}
       >
-        <Nav />
-      </div>
-
-      <img
-        src={hero.src}
-        alt="Hero background"
-        class="absolute inset-0 w-full h-full object-cover -z-10"
-      />
-    </div>
-
-    <article class="max-w-2xl flex flex-col mx-auto my-12 px-4">
-      <AnimatedLink
-        href="/blog"
-        className="!text-black mb-2 inline-block w-[120px]"
-        bgClass="!bg-black">← Back to Posts</AnimatedLink
-      >
-      <Card className="mt-0 w-full mx-auto overflow-hidden">
-        {
-          heroImage && (
-            <div class="aspect-video">
-              <img class="w-full h-full object-cover" src={heroImage} alt="" />
-            </div>
-          )
-        }
-      </Card>
-      <h1 class="text-3xl font-bold mt-6">{title}</h1>
-      <div class="flex flex-row items-center gap-2 my-2">
-        <img src={authorPfp} alt={author} class="rounded-full h-10 w-10" />
-        <div class="flex flex-col">
-          <p class="font-bold">{author}</p>
-          <FormattedDate date={pubDate} />
+        <div
+          class="w-full max-w-screen-xl flex items-center justify-between gap-2 sm:my-12 sm:mb-12 px-6"
+        >
+          <Nav />
         </div>
       </div>
-      <Separator />
-      <div class="mt-6 prose lg:prose-xl">
-        <slot />
-      </div>
-    </article>
-  </body><Footer />
+
+      <article class="max-w-2xl flex flex-col mx-auto px-4 text-white">
+        <AnimatedLink
+          href="/blog"
+          className="!text-white mb-2 inline-block w-[120px]"
+          bgClass="!bg-black">← Back to Posts</AnimatedLink
+        >
+        <Card className="mt-0 w-full mx-auto overflow-hidden">
+          {
+            heroImage && (
+              <div class="aspect-video">
+                <img
+                  class="w-full h-full object-cover"
+                  src={heroImage}
+                  alt=""
+                />
+              </div>
+            )
+          }
+        </Card>
+        <h1 class="text-3xl font-bold mt-6">{title}</h1>
+        <div class="flex flex-row items-center gap-2 my-2">
+          <img src={authorPfp} alt={author} class="rounded-full h-10 w-10" />
+          <div class="flex flex-col">
+            <p class="font-bold">{author}</p>
+            <FormattedDate date={pubDate} />
+          </div>
+        </div>
+        <Separator />
+        <div
+          class="mt-6 prose lg:prose-xl relative z-10 text-white prose-a:text-white prose-h1:text-white prose-h2:text-white prose-h3:text-white prose-code:text-gray-500"
+        >
+          <slot />
+        </div>
+      </article>
+    </PageWrapper><Footer />
+  </body>
 </html>

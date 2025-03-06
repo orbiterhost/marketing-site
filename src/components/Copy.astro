@@ -2,15 +2,16 @@
   class="flex sm:flex-row flex-col-reverse gap-4 items-center justify-center w-full min-h-screen sm:min-h-[700px] sm:my-12 max-w-screen-lg mx-auto overflow-hidden"
 >
   <div
-    class="sm:flex-1 flex flex-col gap-2 bg-white z-20 bg-opacity-80 p-4 rounded-md"
+    class="sm:flex-1 flex flex-col gap-2 text-white z-20 bg-opacity-80 p-4 rounded-md"
   >
     <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
       Launching a Website <br /> Shouldn't be Hard
     </h1>
     <p class="max-w-md">
-      Go from code to site in 30 seconds with a simple upload.
+      Go from code to site in 30 seconds with a simple upload, through the CLI, or with a Github Action.
     </p>
     <div class="flex items-center gap-4 mt-2">
+      <!-- React Logo - Already visible on dark background -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -22,44 +23,22 @@
           ></path></g
         ></svg
       >
+      
+      <!-- Next.js Logo - FIXED: Changed black circle to white -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
         height="32"
         viewBox="0 0 128 128"
-        ><circle cx="64" cy="64" r="64"></circle><path
-          fill="url(#deviconNextjs0)"
+        ><circle cx="64" cy="64" r="64" fill="white"></circle><path
+          fill="#000"
           d="M106.317 112.014L49.167 38.4H38.4v51.179h8.614v-40.24l52.54 67.884a64 64 0 0 0 6.763-5.209"
         ></path><path
-          fill="url(#deviconNextjs1)"
-          d="M81.778 38.4h8.533v51.2h-8.533z"></path><defs
-          ><linearGradient
-            id="deviconNextjs0"
-            x1="109"
-            x2="144.5"
-            y1="116.5"
-            y2="160.5"
-            gradientTransform="scale(.71111)"
-            gradientUnits="userSpaceOnUse"
-            ><stop stop-color="#fff"></stop><stop
-              offset="1"
-              stop-color="#fff"
-              stop-opacity="0"></stop></linearGradient
-          ><linearGradient
-            id="deviconNextjs1"
-            x1="121"
-            x2="120.799"
-            y1="54"
-            y2="106.875"
-            gradientTransform="scale(.71111)"
-            gradientUnits="userSpaceOnUse"
-            ><stop stop-color="#fff"></stop><stop
-              offset="1"
-              stop-color="#fff"
-              stop-opacity="0"></stop></linearGradient
-          ></defs
-        ></svg
+          fill="#000"
+          d="M81.778 38.4h8.533v51.2h-8.533z"></path></svg
       >
+      
+      <!-- Astro Logo - FIXED: Changed background gradient to white -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -74,9 +53,9 @@
             y2="866.902"
             gradientTransform="scale(.1)"
             gradientUnits="userSpaceOnUse"
-            ><stop offset="0" stop-color="#000014"></stop><stop
+            ><stop offset="0" stop-color="#ffffff"></stop><stop
               offset="1"
-              stop-color="#150426"></stop></linearGradient
+              stop-color="#f0f0f0"></stop></linearGradient
           ><linearGradient
             id="deviconAstro1"
             x1="1001.68"
@@ -101,6 +80,8 @@
           d="M84.094 90.074c-3.57 3.055-10.696 5.137-18.903 5.137c-10.07 0-18.515-3.137-20.754-7.356c-.8 2.418-.98 5.184-.98 6.954c0 0-.527 8.675 5.508 14.71a5.67 5.67 0 0 1 5.672-5.671c5.37 0 5.367 4.683 5.363 8.488v.336c0 5.773 3.527 10.719 8.543 12.805a11.6 11.6 0 0 1-1.172-5.098c0-5.508 3.23-7.555 6.988-9.938c2.989-1.894 6.309-4 8.594-8.222a15.5 15.5 0 0 0 1.875-7.41a15.6 15.6 0 0 0-.734-4.735m0 0"
         ></path></svg
       >
+      
+      <!-- Hydrogen Logo - Already visible on dark background -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -117,6 +98,8 @@
           d="M38.6 96.9V30.5h13.9v24.2h23V30.5h13.9v66.4H75.5v-29h-23v29z"
         ></path></svg
       >
+      
+      <!-- HTML Logo - Already visible on dark background -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -135,6 +118,8 @@
           d="M63.952 52.455v13.763h16.947l-1.597 17.849l-15.35 4.143v14.319l28.215-7.82l.207-2.325l3.234-36.233l.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092l.628-6.978l.329-3.692z"
         ></path></svg
       >
+      
+      <!-- CSS Logo - Already visible on dark background -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -159,12 +144,14 @@
           d="M64.048 23.435v13.831H30.64l-.277-3.108l-.63-7.012l-.331-3.711zm-.047 27.996v13.831H48.792l-.277-3.108l-.631-7.012l-.33-3.711z"
         ></path></svg
       >
+      
+      <!-- JavaScript Logo - FIXED: Made yellow background brighter for better contrast -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
         height="32"
         viewBox="0 0 128 128"
-        ><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"
+        ><path fill="#FFE819" d="M1.408 1.408h125.184v125.185H1.408z"
         ></path><path
           fill="#323330"
           d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981c-3.832-1.761-8.104-3.022-9.377-5.926c-.452-1.69-.512-2.642-.226-3.665c.821-3.32 4.784-4.355 7.925-3.403c2.023.678 3.938 2.237 5.093 4.724c5.402-3.498 5.391-3.475 9.163-5.879c-1.381-2.141-2.118-3.129-3.022-4.045c-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235c-5.926 6.724-4.236 18.492 2.975 23.335c7.104 5.332 17.54 6.545 18.873 11.531c1.297 6.104-4.486 8.08-10.234 7.378c-4.236-.881-6.592-3.034-9.139-6.949c-4.688 2.713-4.688 2.713-9.508 5.485c1.143 2.499 2.344 3.63 4.26 5.795c9.068 9.198 31.76 8.746 35.83-5.176c.165-.478 1.261-3.666.38-8.581M69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149c-1.713 3.558-6.152 3.117-8.175 2.427c-2.059-1.012-3.106-2.451-4.319-4.485c-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901c4.462 2.678 10.459 3.499 16.731 2.059c4.082-1.189 7.604-3.652 9.448-7.401c2.666-4.915 2.094-10.864 2.07-17.444c.06-10.735.001-21.468.001-32.237"
@@ -176,30 +163,30 @@
     <div class="relative flex items-center justify-center">
       <!-- Orbit 1 -->
       <div
-        class="absolute w-[75px] sm:w-[75px] md:w-[175px] lg:w-[275px] h-[75px] sm:h-[75px] md:h-[175px] lg:h-[275px] border border-black/20 rounded-full opacity-0 animate-spin-fast"
+        class="absolute w-[75px] sm:w-[75px] md:w-[175px] lg:w-[275px] h-[75px] sm:h-[75px] md:h-[175px] lg:h-[275px] border border-white/20 rounded-full opacity-0 animate-spin-fast"
       >
         <div
-          class="absolute w-2 h-2 bg-black rounded-full -top-1 left-1/2 -translate-x-1/2"
+          class="absolute w-2 h-2 bg-white rounded-full -top-1 left-1/2 -translate-x-1/2"
         >
         </div>
       </div>
 
       <!-- Orbit 2 -->
       <div
-        class="absolute w-[175px] sm:w-[175px] md:w-[325px] lg:w-[475px] h-[175px] sm:h-[175px] md:h-[325px] lg:h-[475px] border border-black/20 rounded-full opacity-0 animate-spin-med"
+        class="absolute w-[175px] sm:w-[175px] md:w-[325px] lg:w-[475px] h-[175px] sm:h-[175px] md:h-[325px] lg:h-[475px] border border-white/20 rounded-full opacity-0 animate-spin-med"
       >
         <div
-          class="absolute w-2 h-2 bg-black rounded-full -top-1 left-1/2 -translate-x-1/2"
+          class="absolute w-2 h-2 bg-white rounded-full -top-1 left-1/2 -translate-x-1/2"
         >
         </div>
       </div>
 
       <!-- Orbit 3 -->
       <div
-        class="absolute w-[275px] sm:w-[275px] md:w-[475px] lg:w-[675px] h-[275px] md:h-[475px] lg:h-[675px] border border-black/20 rounded-full opacity-0 animate-spin-slow"
+        class="absolute w-[275px] sm:w-[275px] md:w-[475px] lg:w-[675px] h-[275px] md:h-[475px] lg:h-[675px] border border-white/20 rounded-full opacity-0 animate-spin-slow"
       >
         <div
-          class="absolute w-2 h-2 bg-black rounded-full -top-1 left-1/2 -translate-x-1/2"
+          class="absolute w-2 h-2 bg-white rounded-full -top-1 left-1/2 -translate-x-1/2"
         >
         </div>
       </div>
@@ -208,7 +195,7 @@
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="sm:w-32 sm:h-32 h-12 w-12 text-black"
+          class="sm:w-32 sm:h-32 h-12 w-12 text-white"
           viewBox="0 0 24 24"
           ><path
             fill="none"

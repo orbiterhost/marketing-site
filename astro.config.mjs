@@ -12,7 +12,7 @@ export default defineConfig({
   output: "static",
   markdown: {
     shikiConfig: {
-      theme: 'poimandres'
+      theme: 'min-dark'
     }
   },
   build: {

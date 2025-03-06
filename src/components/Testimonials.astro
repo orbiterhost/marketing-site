@@ -46,15 +46,17 @@ const testimonials = [
 ---
 
 <div
-  class="flex flex-col gap-12 items-center justify-center min-h-screen sm:min-h-[600px] sm:my-24 w-full max-w-screen-lg mx-auto"
+  class="flex flex-col gap-12 items-center justify-center min-h-screen sm:min-h-[600px] my-24 sm:my-56 w-full max-w-screen-lg mx-auto"
 >
-  <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-    What our Users Think
+  <h1
+    class="text-white scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+  >
+    What Our Users Think
   </h1>
-  <div class="grid sm:grid-cols-2 grid-cols-1 gap-8 p-4">
+  <div class="grid sm:grid-cols-2 grid-cols-1 gap-8 sm:gap-24 p-4">
     {
       testimonials.map((testimonial) => (
-        <Card className="w-[350px]">
+        <Card className="bg-black text-white w-[350px]">
           <CardHeader className="flex flex-row items-center gap-4">
             <AvatarComponent
               client:load
@@ -65,7 +67,7 @@ const testimonials = [
             />
             <div class="flex flex-col">
               <p class="text-xl font-bold">{testimonial.name}</p>
-              <p class="text-secondary-foreground">{testimonial.title}</p>
+              <p class="text-muted-foreground">{testimonial.title}</p>
             </div>
           </CardHeader>
           <CardContent className="italic">"{testimonial.quote}"</CardContent>
