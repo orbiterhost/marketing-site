@@ -34,9 +34,37 @@
               "icon": "lucide-file",
               "title": "the-open-web-and-what-it-actually-means"
             }
+          },
+          {
+            "id": "a5788038410f84c5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "simple-website-hosting-for-small-businesses.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "simple-website-hosting-for-small-businesses"
+            }
+          },
+          {
+            "id": "5b0179cebd6bdec4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "how-orbz-built-a-modern-version-of-stumbleupon-with-orbiter.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "how-orbz-built-a-modern-version-of-stumbleupon-with-orbiter"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -183,11 +211,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "101d9b230ef1403c",
+  "active": "5b0179cebd6bdec4",
   "lastOpenFiles": [
-    "how-orbz-brought-back-stumbleupon-with-orbiter.md",
-    "the-open-web-and-what-it-actually-means.md",
     "simple-website-hosting-for-small-businesses.md",
+    "how-orbz-built-a-modern-version-of-stumbleupon-with-orbiter.md",
+    "how-orbz-built-a-modern-stumbleupon-with-orbiter.md",
+    "the-open-web-and-what-it-actually-means.md",
+    "how-orbz-brought-back-stumbleupon-with-orbiter.md",
     "stop-paying-for-build-minutes.md",
     "the-web-was-meant-for-surfing-not-scrolling.md",
     "expect-businesses-to-be-sustainable.md"
