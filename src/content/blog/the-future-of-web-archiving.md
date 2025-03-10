@@ -1,3 +1,11 @@
+---
+title: The Future of Website Archiving
+description: Orbiter's technical infrastructure makes it perfect for archiving
+heroImage: https://cdn.orbiter.host/ipfs/bafybeihmrrx5q2fhd2sdo2oyzu2iypn665wlpnoaumfc7okos5ee4qmibq
+author: Justin Hunter
+authorPfp: https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq
+pubDate: Mar 10 2025
+---
 The Internet Archive's Wayback Machine is one of my favorite creation. It's useful for trips down memory lane, for proving someone said something, for product research, for marketing research, and so much more. However, it's a heavy lift. 
 
 It's not a heavy lift for the end users accessing the service, but for the Internet Archive to run the Wayback Machine, they need to make use of bots that crawl the web in a similar way to search engines. These bots take snapshots of the underlying HTML, JavaScript, and CSS then store those files in a way that the Wayback Machine can render them when people request archived versions of sites. To date, [the Internet Archive has stored more than a trillion snapshots of sites](https://web.archive.org/details/waybacksummary). That's a lot of storage. That's a lot of compute. 
