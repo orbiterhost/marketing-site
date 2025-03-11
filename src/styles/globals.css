@@ -76,6 +76,10 @@
   opacity: 0 !important;
 }
 
+.glow {
+  box-shadow: 0 0 200px 5px rgba(255, 255, 255, 0.25);
+}
+
 @keyframes twinkle {
 
   0%,

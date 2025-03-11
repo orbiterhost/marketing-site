@@ -30,6 +30,9 @@ export function MobileMenu() {
         <a target="_blank" href="https://docs.orbiter.host"
         >Docs</a
         >
+        <a target="_blank" href="https://github.com/orbiterhost"
+        >GitHub</a
+        >
         <Button asChild className="text-2xl p-6">
           <a href="https://app.orbiter.host">
             <Rocket className="!w-6 !h-6" />

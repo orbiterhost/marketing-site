@@ -58,9 +58,10 @@ const CompetitorDisplay = () => {
   }, []);
 
   return (
-    <span className="competitor-wrapper text-center" ref={wrapperRef}>
+    <span className="competitor-wrapper text-left" ref={wrapperRef} style={{ textAlign: 'left', display: 'inline-block' }}>
       <span
         className={`competitor ${fading ? 'fade-out' : 'fade-in'}`}
+        style={{ textAlign: 'left' }}
       >
         {competitors[currentIndex]}
       </span>

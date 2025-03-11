@@ -4,6 +4,7 @@ import { FileDropzone } from "@/components/dropzone";
 import hero from "@/assets/hero.jpg";
 import Nav from "@/components/Nav.astro";
 import CompetitorDisplay from "@/components/Competitors";
+import { Terminal } from "lucide-react";
 ---
 
 <div
@@ -11,22 +12,67 @@ import CompetitorDisplay from "@/components/Competitors";
 >
   <Nav />
   <div
-    class="flex flex-col gap-2 items-center justify-center p-4 sm:mt-12 mt-6"
+    class="flex flex-col md:flex-row md:justify-center items-center w-full max-w-7xl mx-auto px-4 gap-8 sm:mt-12 mt-6"
   >
-    <h1 class="text-5xl sm:text-7xl font-bold text-center">
-      The Open Source Alternative to
-    </h1>
-    <h1 class="text-5xl sm:text-7xl font-bold text-center">
-      <CompetitorDisplay client:load />
-    </h1>
-    <h4 class="text-center text-lg sm:text-3xl mt-4">
-      Launch your static site in seconds
-    </h4>
+    <div class="flex flex-col gap-2 items-start md:items-start">
+      <h1 class="text-5xl sm:text-7xl font-bold text-left md:text-left">
+        The Open Source Alternative to
+      </h1>
+      <h1 class="text-5xl sm:text-7xl font-bold text-left md:text-left">
+        <CompetitorDisplay client:load />
+      </h1>
+      <h4 class="text-left md:text-left text-lg sm:text-3xl mt-4">
+        Launch your static site in seconds
+      </h4>
+      <div class="flex flex-col md:flex-row gap-4 items-center w-full max-w-md">
+        <Button variant="secondary" className="relative z-10 mt-6 w-full">
+          <a href="https://app.orbiter.host" class="w-full text-center"
+            >Get Started</a
+          >
+        </Button>
+        <Button
+          variant="outline"
+          className="bg-black hover:bg-secondary-foreground hover:text-white relative z-10 mt-6 w-full"
+        >
+          <a href="https://docs.orbiter.host" class="w-full text-center">Docs</a
+          >
+        </Button>
+      </div>
+    </div>
+
+    <div
+      class="terminal-container relative w-full max-w-[500px] overflow-hidden rounded-lg border border-secondary-foreground bg-black text-secondary p-2 shadow-xl"
+    >
+      <div class="flex items-center border-b px-4 py-2">
+        <div class="flex gap-2">
+          <div class="h-3 w-3 rounded-full bg-red-500"></div>
+          <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
+          <div class="h-3 w-3 rounded-full bg-green-500"></div>
+        </div>
+        <div class="ml-4 text-sm font-medium">Terminal</div>
+      </div>
+      <div class="p-4 text-sm text-muted-foreground font-mono">
+        <div class="flex items-center gap-2">
+          <Terminal className="h-4 w-4" />
+          <span class="text-white">npm i -g orbiter-cli</span>
+        </div>
+        <div class="mt-2 text-muted-foreground">
+          <p>Installing Orbiter CLI...</p>
+          <p class="text-yellow-500">
+            ✓ Successfully installed Orbiter CLI v0.5.1
+          </p>
+        </div>
+        <div class="mt-4 flex items-center gap-2">
+          <Terminal className="h-4 w-4" />
+          <span class="text-white">orbiter deploy</span>
+        </div>
+        <div class="mt-2 text-muted-foreground">
+          <p>Creating new Orbiter project...</p>
+          <p class="text-yellow-500">✓ Project deployed!</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <Button variant="secondary" className="relative z-10">
-    <a href="https://app.orbiter.host">Get Started</a>
-  </Button>
-  <FileDropzone client:load />
 </div>
 
 <style>
@@ -47,5 +93,10 @@ import CompetitorDisplay from "@/components/Competitors";
   }
   .fade-in {
     opacity: 1;
+  }
+
+  /* Add soft white glow behind terminal */
+  .terminal-container {
+    box-shadow: 0 0 200px 5px rgba(255, 255, 255, 0.25);
   }
 </style>
