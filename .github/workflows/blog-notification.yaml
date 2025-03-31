@@ -55,18 +55,18 @@ jobs:
                 console.log(`Published date: ${pubDate}`);
 
                 // Call the API with the data
-               // const apiResponse = await axios.post("https://your-api-endpoint.com", {
-               //   title,
-               //   link,
-               //   description
-               // }, {
-               //   headers: {
-               //     "Authorization": `Bearer ${process.env.API_TOKEN}`,
-               //     "Content-Type": "application/json"
-               //   }
-               // });
+                const apiResponse = await axios.post("https://frames.orbiter.host/new_post", {
+                  title,
+                  link,
+                  description
+                }, {
+                  headers: {
+                    "Authorization": `Bearer ${process.env.ADMIN_KEY}`,
+                    "Content-Type": "application/json"
+                  }
+                });
 
-               // console.log("API call successful:", apiResponse.status);
+                console.log("API call successful:", apiResponse.status);
               } catch (error) {
                 console.error("Error:", error.message);
                 process.exit(1);
@@ -76,4 +76,4 @@ jobs:
             main();
           '
         env:
-          API_TOKEN: ${{ secrets.API_TOKEN }}
+          API_TOKEN: ${{ secrets.ADMIN_KEY }}
