@@ -12,6 +12,7 @@
     "imageUrl": "https://orbiter.host/og.png",
     "buttonTitle": "Launch",
     "splashImageUrl": "https://orbiter.host/icon.svg",
-    "splashBackgroundColor": "#ffffff"
+    "splashBackgroundColor": "#ffffff",
+    "webhookUrl": "https://orbiter-frame-server.orbiter-api.workers.dev/webhook"
   }
 }
