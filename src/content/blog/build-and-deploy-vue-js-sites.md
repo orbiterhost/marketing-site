@@ -1,7 +1,7 @@
 ---
-title: How to Build and Deploy Vue.js Sites with Vite and Orbiter in Under 5 Minutes
-pubDate: Mar 28 2025
-description: Vue.js is one of the more popular single page app frameworks on the market. Let's build and deploy a site with it.
+title: "How to Build and Deploy Vue.js Sites with Vite and Orbiter in Under 5 Minutes"
+pubDate: "Mar 28 2025"
+description: "Vue.js is one of the more popular single page app frameworks on the market. Let's build and deploy a site with it."
 heroImage: https://cdn.orbiter.host/ipfs/bafybeidl7qy6kiqkbjzgfpngy7axctmr2n7m7uolxb6hksvwbe6du5cfcq
 author: Justin Hunter
 authorPfp: https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq
@@ -171,8 +171,8 @@ function toggleCart() {
       <p class="description">{{ product.description }}</p>
       <div class="price-action">
         <span class="price">${{ product.price.toFixed(2) }}</span>
-        <button 
-          @click="toggleCart" 
+        <button
+          @click="toggleCart"
           :class="{ 'in-cart': isInCart }"
         >
           {{ isInCart ? 'Remove from Cart' : 'Add to Cart' }}
@@ -351,18 +351,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          
+
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Build
         run: npm run build
-        
+
       - name: Deploy to Orbiter
         uses: orbiter-host/deploy-action@v1
         with:
