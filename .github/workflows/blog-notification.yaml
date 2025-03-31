@@ -30,7 +30,7 @@ jobs:
             async function main() {
               try {
                 // Fetch the RSS feed
-                const response = await axios.get("https://your-rss-feed-url.com/feed.xml");
+                const response = await axios.get("https://orbiter.host/rss.xml");
                 const parser = new xml2js.Parser();
                 const result = await parser.parseStringPromise(response.data);
 
