@@ -10,27 +10,60 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Fetch RSS Feed
-        uses: Promptly-Technologies-LLC/rss-fetch-action@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          feed_url: "https://orbiter.host/blog/rss.xml"
-          file_path: "./feed.json"
-          read-only: true
-      - name: Log feed contents
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install axios xml2js
+
+      - name: Fetch RSS and call API
         run: |
-          jq . < feed.json
-  # deploy:
-  #   runs-on: ubuntu-latest
+          node -e '
+            const axios = require("axios");
+            const xml2js = require("xml2js");
 
-  #   steps:
-  #     - uses: actions/checkout@v3
+            async function main() {
+              try {
+                // Fetch the RSS feed
+                const response = await axios.get("https://your-rss-feed-url.com/feed.xml");
+                const parser = new xml2js.Parser();
+                const result = await parser.parseStringPromise(response.data);
 
-  #     - name: Send Notifications
-  #       run: |
-  #         curl -X POST https://frames.orbiter.host/new_post \
-  #         -H 'Content-Type: application/json' \
-  #         -H 'x-admin-key: ${{ secrets.ADMIN_KEY }}
-  #         -d '{}'
+                // Get the latest item (assumes items are in chronological order)
+                const latestItem = result.rss.channel[0].item[0];
+
+                // Extract the data you need
+                const title = latestItem.title[0];
+                const link = latestItem.link[0];
+                const description = latestItem.description[0];
+
+                console.log(`Latest item: ${title}`);
+
+                // Call the API with the data
+               // const apiResponse = await axios.post("https://your-api-endpoint.com", {
+               //   title,
+               //   link,
+               //   description
+               // }, {
+               //   headers: {
+               //     "Authorization": `Bearer ${process.env.API_TOKEN}`,
+               //     "Content-Type": "application/json"
+               //   }
+               // });
+
+               // console.log("API call successful:", apiResponse.status);
+              } catch (error) {
+                console.error("Error:", error.message);
+                process.exit(1);
+              }
+            }
+
+            main();
+          '
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
