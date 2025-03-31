@@ -9,38 +9,11 @@ import Footer from "@/components/Footer.astro";
 import Testimonials from "@/components/Testimonials.astro";
 import { CLI } from "@/components/CLI.tsx";
 import PageWrapper from "@/components/PageWrapper";
+import { MiniAppLoader } from "@/components/mini-app-loader";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
-<script>
-  function sendFrameReadyMessage() {
-    const generateMessageId = () => {
-      return Array(4)
-        .fill(0)
-        .map(() =>
-          Math.floor(Math.random() * Number.MAX_SAFE_INTEGER).toString(16),
-        )
-        .join("-");
-    };
-
-    const message = {
-      id: generateMessageId(),
-      type: "APPLY",
-      path: ["ready"],
-      argumentList: [{}],
-    };
-
-    if (window.ReactNativeWebView) {
-      window.ReactNativeWebView.postMessage(JSON.stringify(message));
-    } else {
-      window.parent.postMessage(message, "*");
-    }
-  }
-
-  sendFrameReadyMessage();
-</script>
 
 <HomeLayout>
   <PageWrapper client:load>
@@ -51,5 +24,6 @@ import PageWrapper from "@/components/PageWrapper";
     <CLI client:load />
     <Contact />
     <Footer />
+    <MiniAppLoader client:load />
   </PageWrapper>
 </HomeLayout>
