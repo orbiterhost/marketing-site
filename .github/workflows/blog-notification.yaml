@@ -67,6 +67,7 @@ jobs:
                 });
 
                 console.log("API call successful:", apiResponse.status);
+                console.log(apiResponse.data)
               } catch (error) {
                 console.error("Error:", error.message);
                 process.exit(1);
