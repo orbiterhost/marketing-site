@@ -21,7 +21,7 @@ jobs:
           read-only: true
       - name: Log feed contents
         run: |
-          echo "$([[ ${{json}} .feedContents ]])" | jq -
+          jq . < feed.json
   # deploy:
   #   runs-on: ubuntu-latest
 
