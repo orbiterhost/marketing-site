@@ -18,6 +18,7 @@ jobs:
         with:
           feed_url: "https://orbiter.host/blog/rss.xml"
           file_path: "./feed.json"
+          read-only: true
       - name: Log feed contents
         run: |
           echo "$([[ ${{json}} .feedContents ]])" | jq -
