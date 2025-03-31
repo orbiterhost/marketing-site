@@ -18,12 +18,9 @@ jobs:
         with:
           feed_url: "https://orbiter.host/blog/rss.xml"
           file_path: "./feed.json"
-
-      - name: Commit and push changes to repository
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Update RSS feed"
-          file_pattern: "*.json"
+      - name: Log feed contents
+        run: |
+          echo "$([[ ${{json}} .feedContents ]])" | jq -
 
   # deploy:
   #   runs-on: ubuntu-latest
