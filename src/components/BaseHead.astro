@@ -17,7 +17,7 @@ const {
   image = "https://orbiter.host/og.png",
 } = Astro.props;
 
-const metadata = {
+const metadata = JSON.stringify({
   version: "next",
   imageUrl: image,
   button: {
@@ -30,7 +30,7 @@ const metadata = {
       splashBackgroundColor: "#000000",
     },
   },
-};
+});
 ---
 
 <!-- Global Metadata -->
@@ -66,4 +66,4 @@ const metadata = {
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<meta name="fc:frame" content={`${metadata}`} />
+<meta name="fc:frame" content={metadata} />

@@ -58,7 +58,6 @@ jobs:
 
                 console.log(`Latest item: ${title}`);
                 console.log(`Published date: ${pubDate}`);
-                console.log(link)
 
                 // Call the API with the data
                 const apiResponse = await axios.post("https://frames.orbiter.host/new_post", {
