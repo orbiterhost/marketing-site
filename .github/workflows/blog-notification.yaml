@@ -33,6 +33,7 @@ jobs:
                 const response = await axios.get("https://orbiter.host/rss.xml");
                 const parser = new xml2js.Parser();
                 const result = await parser.parseStringPromise(response.data);
+                console.log(result)
 
                 // Get the latest item (assumes items are in chronological order)
                 const latestItem = result.rss.channel[0].item[0];
