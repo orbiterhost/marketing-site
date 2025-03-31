@@ -1,12 +1,17 @@
 name: Blog Notifications
 on:
+  workflow_run:
+    workflows: ["Deploy"]
+    types:
+      - completed
   push:
     branches: [main]
     # paths:
     #   - "src/content/blog/**" # Only trigger when blog content changes
+    #
 
 jobs:
-  fetch-rss:
+  send-blog-notifications:
     runs-on: ubuntu-latest
 
     steps:
