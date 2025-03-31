@@ -9,7 +9,6 @@ import { Separator } from "@/components/ui/separator";
 import Footer from "@/components/Footer.astro";
 import Nav from "@/components/Nav.astro";
 import PageWrapper from "@/components/PageWrapper.astro";
-import { MiniAppLoader } from "@/components/mini-app-loader";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -20,6 +19,13 @@ const { title, description, pubDate, heroImage, author, authorPfp } =
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} image={heroImage} />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@farcaster/frame-sdk/dist/index.min.js"
+    ></script>
+    <script>
+      //@ts-ignore
+      frame.sdk.actions.ready();
+    </script>
     <style>
       html,
       body {
@@ -81,7 +87,6 @@ const { title, description, pubDate, heroImage, author, authorPfp } =
           <slot />
         </div>
       </article>
-      <MiniAppLoader client:load />
     </PageWrapper><Footer />
   </body>
 </html>
