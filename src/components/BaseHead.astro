@@ -16,6 +16,21 @@ const {
   description,
   image = "https://orbiter.host/og.png",
 } = Astro.props;
+
+const metadata = {
+  version: "next",
+  imageUrl: image,
+  button: {
+    title: "Launch",
+    action: {
+      type: "launch_frame",
+      name: "Launch",
+      url: "https://orbiter.host",
+      splashImageUrl: "https://orbiter.host/orbiter.png",
+      splashBackgroundColor: "#000000",
+    },
+  },
+};
 ---
 
 <!-- Global Metadata -->
@@ -50,3 +65,5 @@ const {
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<meta name="fc:frame" content={`${metadata}`} />
