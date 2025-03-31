@@ -76,4 +76,4 @@ jobs:
             main();
           '
         env:
-          API_TOKEN: ${{ secrets.ADMIN_KEY }}
+          ADMIN_KEY: ${{ secrets.ADMIN_KEY }}
