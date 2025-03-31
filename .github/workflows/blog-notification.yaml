@@ -1,0 +1,39 @@
+name: Blog Notifications
+on:
+  push:
+    branches: [main]
+    # paths:
+    #   - "src/content/blog/**" # Only trigger when blog content changes
+
+jobs:
+  fetch-rss:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Fetch RSS Feed
+        uses: Promptly-Technologies-LLC/rss-fetch-action@v2
+        with:
+          feed_url: "https://orbiter.host/blog/rss.xml"
+          file_path: "./feed.json"
+
+      - name: Commit and push changes to repository
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update RSS feed"
+          file_pattern: "*.json"
+
+  # deploy:
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - uses: actions/checkout@v3
+
+  #     - name: Send Notifications
+  #       run: |
+  #         curl -X POST https://frames.orbiter.host/new_post \
+  #         -H 'Content-Type: application/json' \
+  #         -H 'x-admin-key: ${{ secrets.ADMIN_KEY }}
+  #         -d '{}'
