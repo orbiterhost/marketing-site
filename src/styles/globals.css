@@ -68,6 +68,7 @@
     @apply bg-black text-foreground;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    background: black;
   }
 }
 
