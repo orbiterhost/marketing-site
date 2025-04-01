@@ -4,11 +4,10 @@ on:
     workflows: ["Deploy"]
     types:
       - completed
-  # push:
-  #   branches: [main]
-  # paths:
-  #   - "src/content/blog/**" # Only trigger when blog content changes
-  #
+  push:
+    branches: [main]
+    paths:
+      - "src/content/blog/**" # Only trigger when blog content changes
 
 jobs:
   send-blog-notifications:
