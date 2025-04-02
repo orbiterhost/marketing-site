@@ -53,8 +53,59 @@ jobs:
         run: npm install axios xml2js
 
       - name: Fetch RSS and call API
-        if: steps.check_changes.outputs.has_changes == 'true'
         run: |
-          # Your existing node script here
+          node -e '
+            const axios = require("axios");
+            const xml2js = require("xml2js");
+
+            async function main() {
+              try {
+                // Fetch the RSS feed
+                const response = await axios.get("https://orbiter.host/rss.xml");
+                const parser = new xml2js.Parser();
+                const result = await parser.parseStringPromise(response.data);
+
+                // Get all items and sort them by pubDate (newest first)
+                const items = result.rss.channel[0].item;
+                const sortedItems = items.sort((a, b) => {
+                  const dateA = new Date(a.pubDate[0]);
+                  const dateB = new Date(b.pubDate[0]);
+                  return dateB - dateA; // Descending order (newest first)
+                });
+
+                // Get the latest item (first item after sorting)
+                const latestItem = sortedItems[0];
+
+                // Extract the data you need
+                const title = latestItem.title[0];
+                const link = latestItem.link[0];
+                const description = latestItem.description[0];
+                const pubDate = latestItem.pubDate[0];
+
+                console.log(`Latest item: ${title}`);
+                console.log(`Published date: ${pubDate}`);
+
+                // Call the API with the data
+                const apiResponse = await axios.post("https://frames.orbiter.host/new_post", {
+                  title,
+                  link,
+                  description
+                }, {
+                  headers: {
+                    "Authorization": `Bearer ${process.env.ADMIN_KEY}`,
+                    "Content-Type": "application/json"
+                  }
+                });
+
+                console.log("API call successful:", apiResponse.status);
+                console.log(apiResponse.data)
+              } catch (error) {
+                console.error("Error:", error.message);
+                process.exit(1);
+              }
+            }
+
+            main();
+          '
         env:
           ADMIN_KEY: ${{ secrets.ADMIN_KEY }}
