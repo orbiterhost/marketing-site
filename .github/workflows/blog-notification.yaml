@@ -53,6 +53,7 @@ jobs:
         run: npm install axios xml2js
 
       - name: Fetch RSS and call API
+        if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           node -e '
             const axios = require("axios");
