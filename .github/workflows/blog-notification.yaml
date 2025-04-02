@@ -9,7 +9,6 @@ on:
 
 jobs:
   send-blog-notifications:
-    # Only run if the deployment was successful
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
@@ -17,14 +16,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.workflow_run.head_sha }} # Get the correct commit
+          ref: ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 2 # Fetch the last 2 commits
 
-      # Check if blog content changed
+      # Modified check for blog changes
       - name: Check for blog changes
         id: check_changes
         run: |
           git fetch origin ${{ github.event.workflow_run.head_branch }}
-          CHANGED_FILES=$(git diff --name-only ${{ github.event.workflow_run.head_sha }}^ ${{ github.event.workflow_run.head_sha }} | grep "^src/content/blog/")
+
+          # Get the list of changed files
+          if git rev-parse HEAD^1 >/dev/null 2>&1; then
+            # If there's a parent commit, compare with it
+            CHANGED_FILES=$(git diff --name-only HEAD^1 HEAD | grep "^src/content/blog/" || true)
+          else
+            # If this is the first commit, list all blog files
+            CHANGED_FILES=$(git ls-tree -r --name-only HEAD | grep "^src/content/blog/" || true)
+          fi
+
           if [ -n "$CHANGED_FILES" ]; then
             echo "Blog content changed"
             echo "has_changes=true" >> $GITHUB_OUTPUT
