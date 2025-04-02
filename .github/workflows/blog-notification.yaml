@@ -4,79 +4,48 @@ on:
     workflows: ["Deploy"]
     types:
       - completed
-    paths:
-      - "src/content/blog/**" # Only trigger when blog content changes
+    branches:
+      - main
 
 jobs:
   send-blog-notifications:
+    # Only run if the deployment was successful
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }} # Get the correct commit
+
+      # Check if blog content changed
+      - name: Check for blog changes
+        id: check_changes
+        run: |
+          git fetch origin ${{ github.event.workflow_run.head_branch }}
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.workflow_run.head_sha }}^ ${{ github.event.workflow_run.head_sha }} | grep "^src/content/blog/")
+          if [ -n "$CHANGED_FILES" ]; then
+            echo "Blog content changed"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "No blog content changes"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Set up Node.js
+        if: steps.check_changes.outputs.has_changes == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: "18"
 
       - name: Install dependencies
+        if: steps.check_changes.outputs.has_changes == 'true'
         run: npm install axios xml2js
 
       - name: Fetch RSS and call API
+        if: steps.check_changes.outputs.has_changes == 'true'
         run: |
-          node -e '
-            const axios = require("axios");
-            const xml2js = require("xml2js");
-
-            async function main() {
-              try {
-                // Fetch the RSS feed
-                const response = await axios.get("https://orbiter.host/rss.xml");
-                const parser = new xml2js.Parser();
-                const result = await parser.parseStringPromise(response.data);
-
-                // Get all items and sort them by pubDate (newest first)
-                const items = result.rss.channel[0].item;
-                const sortedItems = items.sort((a, b) => {
-                  const dateA = new Date(a.pubDate[0]);
-                  const dateB = new Date(b.pubDate[0]);
-                  return dateB - dateA; // Descending order (newest first)
-                });
-
-                // Get the latest item (first item after sorting)
-                const latestItem = sortedItems[0];
-
-                // Extract the data you need
-                const title = latestItem.title[0];
-                const link = latestItem.link[0];
-                const description = latestItem.description[0];
-                const pubDate = latestItem.pubDate[0];
-
-                console.log(`Latest item: ${title}`);
-                console.log(`Published date: ${pubDate}`);
-
-                // Call the API with the data
-                const apiResponse = await axios.post("https://frames.orbiter.host/new_post", {
-                  title,
-                  link,
-                  description
-                }, {
-                  headers: {
-                    "Authorization": `Bearer ${process.env.ADMIN_KEY}`,
-                    "Content-Type": "application/json"
-                  }
-                });
-
-                console.log("API call successful:", apiResponse.status);
-                console.log(apiResponse.data)
-              } catch (error) {
-                console.error("Error:", error.message);
-                process.exit(1);
-              }
-            }
-
-            main();
-          '
+          # Your existing node script here
         env:
           ADMIN_KEY: ${{ secrets.ADMIN_KEY }}
