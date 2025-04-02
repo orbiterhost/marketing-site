@@ -105,7 +105,7 @@ jobs:
                   description
                 }, {
                   headers: {
-                    "Authorization": `Bearer ${process.env.ADMIN_KEY}`,
+                    "X-Orbiter-Admin": `${process.env.ADMIN_KEY}`,
                     "Content-Type": "application/json"
                   }
                 });
