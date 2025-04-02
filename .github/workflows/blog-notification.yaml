@@ -25,21 +25,33 @@ jobs:
         run: |
           git fetch origin ${{ github.event.workflow_run.head_branch }}
 
-          # Get the list of changed files
           if git rev-parse HEAD^1 >/dev/null 2>&1; then
-            # If there's a parent commit, compare with it
-            CHANGED_FILES=$(git diff --name-only HEAD^1 HEAD | grep "^src/content/blog/" || true)
-          else
-            # If this is the first commit, list all blog files
-            CHANGED_FILES=$(git ls-tree -r --name-only HEAD | grep "^src/content/blog/" || true)
-          fi
+            # Get the diff and look for added "publish: true" in blog files
+            PUBLISHED_POST=$(git diff HEAD^1 HEAD -- 'src/content/blog/*.mdx' | grep -B5 '^\+publish: true' || true)
 
-          if [ -n "$CHANGED_FILES" ]; then
-            echo "Blog content changed"
-            echo "has_changes=true" >> $GITHUB_OUTPUT
+            if [ -n "$PUBLISHED_POST" ]; then
+              echo "New published blog post detected"
+              echo "has_changes=true" >> $GITHUB_OUTPUT
+
+              # Extract the file name of the changed post
+              FILE_NAME=$(git diff --name-only HEAD^1 HEAD -- 'src/content/blog/*.mdx' | head -n1)
+              echo "file_name=$FILE_NAME" >> $GITHUB_OUTPUT
+            else
+              echo "No newly published blog posts"
+              echo "has_changes=false" >> $GITHUB_OUTPUT
+            fi
           else
-            echo "No blog content changes"
-            echo "has_changes=false" >> $GITHUB_OUTPUT
+            # For first commit, check for any files with publish: true
+            PUBLISHED_POST=$(git ls-files 'src/content/blog/*.mdx' | xargs grep -l "publish: true" || true)
+
+            if [ -n "$PUBLISHED_POST" ]; then
+              echo "Published blog post found in initial commit"
+              echo "has_changes=true" >> $GITHUB_OUTPUT
+              echo "file_name=$PUBLISHED_POST" >> $GITHUB_OUTPUT
+            else
+              echo "No published blog posts in initial commit"
+              echo "has_changes=false" >> $GITHUB_OUTPUT
+            fi
           fi
 
       - name: Set up Node.js
