@@ -1,0 +1,14 @@
+---
+import MiniApps from "@/components/MiniApps.astro";
+import PageWrapper from "@/components/PageWrapper.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="Mini Apps"
+  description="Orbiter is the Farcaster Mini App hosting platform. Deploy in seconds."
+>
+  <PageWrapper client:load >
+    <MiniApps client:load />
+  </PageWrapper>
+</Layout>

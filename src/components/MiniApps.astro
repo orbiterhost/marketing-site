@@ -1,0 +1,256 @@
+---
+import {
+  Terminal,
+  Rocket,
+  Globe,
+  Code,
+  Key,
+  Zap,
+  BookOpen,
+} from "lucide-react";
+import Nav from "./Nav.astro";
+import { Button } from "./ui/button";
+import MiniApp from "@/assets/MiniApp.png";
+import { Image } from "astro:assets";
+---
+
+<div
+  class={`relative flex flex-col items-center justify-start h-auto w-full text-white gap-12 overflow-hidden pb-36`}
+>
+  <Nav />
+  <!-- Hero Section -->
+  <div
+    class="flex flex-col md:flex-row md:justify-center items-center w-full max-w-7xl mx-auto px-4 gap-8 sm:mt-12 mt-6"
+  >
+    <div class="flex flex-col gap-2 items-start md:items-start">
+      <h1 class="text-5xl sm:text-7xl font-bold text-left md:text-left">
+        The Hosting Platform
+      </h1>
+      <h1 class="text-5xl sm:text-7xl font-bold text-left md:text-left">
+        For Farcaster Mini Apps
+      </h1>
+      <h4 class="text-left md:text-left text-lg sm:text-3xl mt-4">
+        Launch your mini app in seconds
+      </h4>
+      <div class="flex flex-col md:flex-row gap-4 items-center w-full max-w-md">
+        <Button variant="secondary" className="relative z-10 mt-6 w-full">
+          <a href="https://app.orbiter.host" class="w-full text-center"
+            >Get Started</a
+          >
+        </Button>
+        <Button
+          variant="outline"
+          className="bg-black hover:bg-secondary-foreground hover:text-white relative z-10 mt-6 w-full"
+        >
+          <a href="https://docs.orbiter.host" class="w-full text-center">Docs</a
+          >
+        </Button>
+      </div>
+    </div>
+    <div
+      class="terminal-container relative w-full max-w-[500px] overflow-hidden rounded-lg border border-secondary-foreground bg-black text-secondary p-2 shadow-xl"
+    >
+      <Image src={MiniApp} alt="Mini app" />
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="w-full max-w-7xl mx-auto px-4 mt-12">
+    <h2 class="text-4xl font-bold text-center mb-12">Why Choose Orbiter?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Feature 1 -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <div class="flex items-center mb-4">
+          <Rocket class="w-6 h-6 mr-2" />
+          <h3 class="text-xl font-bold">Deploy to IPFS + Base</h3>
+        </div>
+        <p class="text-secondary">
+          Seamlessly deploy your Mini Apps to IPFS with Base integration for
+          decentralized, reliable hosting that scales with your needs.
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <div class="flex items-center mb-4">
+          <Globe class="w-6 h-6 mr-2" />
+          <h3 class="text-xl font-bold">Unlimited Traffic</h3>
+        </div>
+        <p class="text-secondary">
+          No bandwidth limits. Your Mini App can handle any amount of traffic,
+          from launch day spikes to viral growth, without worrying about costs.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <div class="flex items-center mb-4">
+          <Key class="w-6 h-6 mr-2" />
+          <h3 class="text-xl font-bold">Custom Domain Support</h3>
+        </div>
+        <p class="text-secondary">
+          Use your own domain to give your Mini App a professional branded
+          experience that users can trust.
+        </p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <div class="flex items-center mb-4">
+          <Code class="w-6 h-6 mr-2" />
+          <h3 class="text-xl font-bold">Automatic farcaster.json</h3>
+        </div>
+        <p class="text-secondary">
+          Coming soon: Auto-generate your farcaster.json configuration file to
+          simplify integration with the Farcaster network.
+        </p>
+      </div>
+
+      <!-- Feature 5 -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <div class="flex items-center mb-4">
+          <Zap class="w-6 h-6 mr-2" />
+          <h3 class="text-xl font-bold">Framework Flexibility</h3>
+        </div>
+        <p class="text-secondary">
+          Build with your favorite tools including React, Astro, Next.js,
+          Gatsby, and more. No need to change your workflow.
+        </p>
+      </div>
+
+      <!-- Feature 6 -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <div class="flex items-center mb-4">
+          <BookOpen class="w-6 h-6 mr-2" />
+          <h3 class="text-xl font-bold">Comprehensive Docs</h3>
+        </div>
+        <p class="text-secondary">
+          Access detailed documentation to learn how to build and deploy
+          powerful Mini Apps with ease.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What are Mini Apps Section -->
+  <div class="w-full max-w-7xl mx-auto px-4 mt-16">
+    <h2 class="text-4xl font-bold text-center mb-8">What are Mini Apps?</h2>
+    <p class="text-xl text-center mb-12 max-w-3xl mx-auto text-secondary">
+      Mini Apps enable developers to distribute native-like apps to Farcaster
+      users — the easiest way to deliver engaging, high-retention, and easy to
+      monetize applications.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Benefit 1 -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <h3 class="text-xl font-bold mb-4">Ship Fast</h3>
+        <p class="text-secondary">
+          Go from idea to users in hours—no app store reviews. Build with HTML,
+          CSS, and JavaScript and use the Mini App SDK to deliver native-like
+          apps.
+        </p>
+      </div>
+
+      <!-- Benefit 2 -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <h3 class="text-xl font-bold mb-4">Get Discovered</h3>
+        <p class="text-secondary">
+          Social feed discovery puts users just 1-click away and viral growth
+          mechanics are built in. Users can find new applications through Mini
+          App stores.
+        </p>
+      </div>
+
+      <!-- Benefit 3 -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <h3 class="text-xl font-bold mb-4">Retain Users</h3>
+        <p class="text-secondary">
+          Mobile notifications re-engage users by bringing them back when
+          something new to do. Users can save their favorite Mini Apps so they
+          are always a click away.
+        </p>
+      </div>
+
+      <!-- Benefit 4 -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <h3 class="text-xl font-bold mb-4">Transact Seamlessly</h3>
+        <p class="text-secondary">
+          An integrated Ethereum Wallet provides permissionless financial rails.
+          Users can send money, buy art, or donate in a single click.
+        </p>
+      </div>
+
+      <!-- Benefit 5 -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <h3 class="text-xl font-bold mb-4">Build Social</h3>
+        <p class="text-secondary">
+          Users are signed into Mini Apps without forms or passwords. Leverage
+          Farcaster's rich social data to create engaging social experiences.
+        </p>
+      </div>
+
+      <!-- Get Started CTA -->
+      <div
+        class="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-secondary-foreground hover:border-secondary transition-all duration-300"
+      >
+        <h3 class="text-xl font-bold mb-4 text-center">Ready to build?</h3>
+        <Button variant="secondary" className="w-full">
+          <a href="https://miniapps.farcaster.xyz/" class="w-full text-center"
+            >Check out the Mini App docs</a
+          >
+        </Button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="w-full max-w-7xl mx-auto px-4 mt-24">
+    <div
+      class="bg-black/50 backdrop-blur-md p-10 rounded-lg border border-secondary-foreground text-center"
+    >
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Launch Your Mini App Today
+      </h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto text-secondary">
+        Join the growing community of developers building for the Farcaster
+        ecosystem with Orbiter's powerful hosting platform.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button variant="secondary" className="px-8 py-6">
+          <a href="https://app.orbiter.host" class="text-lg"
+            >Deploy Your First App</a
+          >
+        </Button>
+        <Button
+          variant="outline"
+          className="bg-black px-8 py-6 hover:bg-secondary-foreground hover:text-white"
+        >
+          <a href="https://docs.orbiter.host" class="text-lg">Read the Docs</a>
+        </Button>
+      </div>
+    </div>
+  </div>
+</div>
