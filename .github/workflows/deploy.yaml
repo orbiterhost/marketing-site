@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Deploy to Orbiter
-        uses: orbiterhost/orbiter-github-actions@v0.1.0 # Update with latest version
+        uses: orbiterhost/orbiter-github-actions@v0.1.7 # Update with latest version
         with:
           project-name: "marketing" # Name of your project
           build-dir: "./dist" # Name of the build output directory
