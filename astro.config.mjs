@@ -15,9 +15,6 @@ export default defineConfig({
       theme: 'min-dark'
     }
   },
-  build: {
-    assetsPrefix: "./",
-  },
   integrations: [tailwind({
     applyBaseStyles: false,
   }), react(), mdx(), sitemap()],

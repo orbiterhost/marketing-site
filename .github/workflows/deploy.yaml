@@ -18,4 +18,4 @@ jobs:
           api-key: ${{ secrets.ORBITER_API_KEY }} # Will use repository secret
           # Optional inputs with their defaults
           node-version: "20.x" # Optional, defaults to '20.x'
-          build-command: "npm run build" # Optional, defaults to 'npm run build'
+          build-command: "bun run build" # Optional, defaults to 'npm run build'
