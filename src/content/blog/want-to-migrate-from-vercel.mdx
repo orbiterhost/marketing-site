@@ -1,0 +1,151 @@
+---
+title: "Want to Migrate from Vercel?"
+pubDate: "Mat 05 2025"
+description: "Learn the steps you need to take to liberate your tech stack from vendor lock in"
+heroImage: "https://cdn.orbiter.host/ipfs/bafkreidqoxwfmi7mafiar4ncz2thiibtql3lfohm6kzcz2mdekj3e2vm5y"
+author: "Steve Simkins"
+authorPfp: "https://cdn.orbiter.host/ipfs/bafkreifusckbeuxuih4o6p5un5j34selfg3uvt6ltqwbv4glsigekdx7lq"
+publish: true
+---
+
+
+I believe most developers have felt the push and pull of whether they need to leave Vercel or not. On one hand it's a product that can make it easy to ship and iterate an idea or a product, especially when paired with Next.js. On the other, there are plenty of devs who are afraid what will happen when if their app becomes popular and they get a sudden and unfriendly bill from Vercel. It's actually something that happened to me not too long ago. I had a personal blog post get a lot of attention in the tech community and I immediately started getting alerts that I was hitting some limits in Vercel. I quickly migrated to Cloudflare pages, but that was only possible because I was using a framework that worked in multiple places. It was just a blog, not a complex application that used APIs or databases. That is the reality some developer face if they want to move away from Next.js and Vercel. In this post we'll walk you through what that might look like in case you consider breaking free.
+
+## What It Will Take
+
+We should make it pretty clear that depending on your app, it's going to take some work. Next.js defaults to using Server-Side-Rendering or SSR. By doing this it automatically starts to make migration complicated, and in most cases impossible. Next is a framework that is designed to work with Vercel, and it's to a point where you can't just deploy it somewhere else. Somee people have even tried to use an alternative called Open Next which can be self hosted, but even then it falls short and struggles. The reality is breaking free from Vercel might mean breaking free from Next.js, and that is a hard truth to swollow. The good news is there's a simpler way to build apps instead of SSR first.
+
+Before SSR started to pick up in recent years the primary stack used for everything on the web was Jamstack (Javascript APIs Markdown). It had great power in it's simplicity, tooling, and the ability to migrate to another hosting platform without a vendor lock in. Companies like Netlify and Vercel left that model because there was more money to be made with SSR, and most developers have drunk the koolaid. It's not too late though, as you can still build Jamstack apps at scale and with ease.
+
+The primary switch in your brain that you will need to make is doing as much as you can on your API, then making simple calls from your client. With Next.js you generally might think of making your API calls in a server component then rendering it, whereas Jamstack you would simply render the app, make the API call, then render the data. It's a relatively simple change of perspective, but I won't sugar coat it: depending on your infra it's gonna take some work to migrate everything. So why bother?
+
+## Why It's Worth It
+
+If Next.js is not a portable framework that cannot be easily migrated to another hosting platform, then it poses a significant risk to apps being built on it. You as the developer should be free to use whatever platform you like, or self host it if you want to. If you want true freedom then that means going through the pain of moving to a different solution that may not be as convenient. However, once you have tasted freedom, there's no going back.
+
+Justin and I have built countless apps diplaying the capabilities of products we worked on. We used Next.js for a lot of these, but after a while we started running into a lot of the caching issues that people experienced in v.13 and v.14, among other weird "only an issue with Next" problems. In our jobs Next was making things harder, not easier. Eventually we switched to Cloudflare Workers and Pages. It meant adapting our way of thinking when it came to how the server and the client work together. Sure it took a little time, but with the help of some modern frameworks like Vite + React and Hono, we had a smooth and super fast iterating stack that just worked. Little did we realize it at the time, we were just going back to Jamstack.
+
+It was under this same spirit that we built Orbiter. We believed that having a server and a client made sense, and we wanted to make it even easier to host open and accessible static sites. The beauty of Orbiter is how you can just take your sites and go somewhere else. That's the power of Jamstack. That is the power of not depending on Vercel. Again, I assure you, the pain you might expereince in the short run is worth it in the long term.
+
+## Tips to Get Started
+
+We've doing plenty of talking on the "why," so let's shift to how you can actually move your app to a more open stack. These tips are purely from experience and yours might be different, so take it all with a grain of salt. All journeys are different, we just want to share ours and hope it helps yours!
+
+### Start with the Server
+
+If you're app has data being fetched from somewhere else like an external API or a database, you want to do your best to start with thinking through what data you need to build in your server and send to the client. In some ways this is where SSR comes in handy as you already mgight thing in this model. The difference is turning it into an API response. As mentioned earlier Justin and I are huge fans of [Hono](https://hono.dev). It's similar to Express if you have used that before, but much simpler, modern, and easier to use. Setting up an API route can be as simple as a few lines of code.
+
+```typescript
+import { Hono } from 'hono'
+import { cors } from 'hono/cors'
+
+const app = new Hono()
+
+app.use(cors())
+
+app.get('/', (c) => {
+  return c.text('Hello Hono!')
+})
+
+app.get('/hello', async (c) => {
+
+  const data = {
+    message: `Hello Again!`,
+    success: true
+  }
+
+  return c.json(data, { status: 200 })
+})
+
+export default app
+```
+
+Hono has loads of middleware plugins for auth or linking up a database. Our favorites are using it with Cloudflare Workers so you can have easy acccess to KV namespaces or D1 Databases. Once you have the data of your app complied to you can move to the client.
+
+### Keep the Client Light
+
+If you have control over your server and what is sent over an API then you have the power to keep your client light. You can use any framework you like, but our favorite is still classic Vite + React in Typescript. This is not your uncle's `create-react-app`; Vite makes this client combo snappy and familiar. Making an API call and loading the data we saw earlier could be simple as this.
+
+```typescript
+import { useState, useEffect } from 'react'
+
+function App() {
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/hello`)
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`)
+        }
+
+        const result = await response.json()
+        setData(result)
+        setLoading(false)
+      } catch (err) {
+        setError(err.message)
+        setLoading(false)
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  return (
+    <div className="app">
+      <h1>Hello API Example</h1>
+      {loading && <p>Loading data...</p>}
+      {error && <p>Error: {error}</p>}
+      {data && (
+        <div className="data-container">
+          <p>Message from API: {data.message}</p>
+          <p>Success: {data.success ? 'Yes' : 'No'}</p>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default App
+```
+
+The key to avoiding too many API calls and too much state being passed around is focusing on what your app needs, crafting the data on the server, then if necessary pass it down as props into other components or utilize a global state machine. You can really handle it however you see fit, but we will testify that if you think through it in these steps, it will help your journey tremendously.
+
+### Try `bhvr`
+
+Justin and I loved this stack so much I built a template to make it easier to start working with called `bhvr` which stands for Bun Hono Vite and React. It's basically what you've already seen here, except all in one repo with shared types to make it easier to work on all of it at the same time.
+
+```
+.
+├── client/               # React frontend
+├── server/               # Hono backend
+├── shared/               # Shared TypeScript definitions
+│   └── src/types/        # Type definitions used by both client and server
+└── package.json          # Root package.json with workspaces
+```
+
+Check it out by running the following command
+
+```bash
+bun create bhvr@latest
+```
+
+Would highly recommend visiting the [GitHub Repo](https://github.com/stevedylandev/bhvr) for more info. Also if you want to start a new `bhvr` project and go ahead and deploy the client to Orbiter, just run the following.
+
+```bash
+npm i -g orbiter-cli
+
+orbiter login
+
+orbiter new
+```
+
+Then select the `bhvr` template and you're all set; it's that easy.
+
+## Wrapping Up
+
+Justin and I are firm believers that SSR isn't what most developers want, and it's certainly isn't what they need. The last thing the web needs is more walled gardens controled by massive VC funded companies that only have one true goal. The internet needs a revolution of developers that reinstate Jamstack as the primary way to build on the web, where the content flows freely and isn't tied to one place. Next time you're thinking of migrating from Vercel, consider Orbiter.
