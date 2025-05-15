@@ -18,9 +18,9 @@ A CMS is a content management system. It does what it says on the tin. It manage
 A headless CMS does not care what your site looks like or where it is hosted. Instead, it creates an application programming interface (API) that allows your site to communicate with the content the headless CMS manages. There are many flavors of this, but these types of CMS tools fall into two broad categories:
 
 1.  Your site fetches content (either at build time or live) from the headless CMS and converts that content into pages on your site
-    
+
 2.  The CMS creates new files for your site to use but your site never needs to make a remote API request
-    
+
 
 The headless CMS we'll be using falls into the second category. We'll be using [Pages CMS](https://pagescms.org), an open source headless CMS that connects directly to your Github repo. Pages CMS allows you to define a simple configuration file to make sure it knows where your media assets are and where your content is. As you create new content, you will be writing commits back to the Github repository where your site lives.
 
@@ -30,25 +30,25 @@ We're going to create a static site using Eleventy, but you can use whatever gen
 
 First, create a new directory for your site and change into it:
 
-```
+```bash
 mkdir my-static-site && cd my-static-site
 ```
 
 Now, you'll need to initialize your project to use `npm`. Run the following:
 
-```
+```bash
 npm init -y
 ```
 
 When that is complete, you can install Eleventy with this command:
 
-```
+```bash
 npm install @11ty/eleventy
 ```
 
 Ok, now we're ready to set up a very simple site and then demonstrate how Pages CMS will make creating blog post entries dead-simple. Let's add an `index.html` file in the root of our project. You can do this via the terminal or open the project in your favorite code editor. I'll be using VS Code. Inside that file, add the following:
 
-```
+```markdown
 ---
 layout: layout.html
 ---
@@ -59,7 +59,7 @@ You might be looking at that and thinking, "that's not right." It's not right if
 
 Let's create that layout file now. Add a directory to your project called `_includes`. Inside that directory, add a file called `layout.html`. Inside that file, add:
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -79,7 +79,7 @@ This file can look however you'd like but remember it's the wrapper for your oth
 
 Let's add a script to run our site and see it in the browser. In your `package.json` file, add this to the `scripts` section:
 
-```
+```json
  "scripts": {
     "dev": "npx @11ty/eleventy --serve"
   },
@@ -87,7 +87,7 @@ Let's add a script to run our site and see it in the browser. In your `package.j
 
 Now, from your terminal, run:
 
-```
+```bash
 npm run dev
 ```
 
@@ -95,21 +95,21 @@ You should see that Eleventy automatically builds your `index.html` file and tha
 
 Now, let's add some blog posts! Create a folder in your project called `posts`. Inside that folder, create a file called `post1.md`. Inside that file, add:
 
-```
+```markdown
 ---
 title: My First Post
 description: A simple example blog post
 layout: layout.html
 tags: ["post"]
 ---
-This is a simple blog post example. It contains: 
+This is a simple blog post example. It contains:
 
 # Headings
 ## Headings
-and 
+and
 ### More headings
 
-It also includes: 
+It also includes:
 
 * bullet
 * points
@@ -123,7 +123,7 @@ Ok, so we have a post. If you look at your terminal, you'll see when you saved t
 
 Open the root `index.html` file, and let's update it to look like this:
 
-```
+```markdown
 ---
 layout: layout.html
 ---
@@ -159,16 +159,16 @@ To initialize a local git repository and then push to Github from the terminal, 
 
 When this is complete, Pages CMS will be connected to your repository, but it's not quite ready for use. You'll need to specify where your content lives and where your media lives. In our example, we didn't have any media assets, but you could create a folder in your project called `media` and that's where you'd put things like images and videos that you use in your posts. You'll need to provide this information in the settings editor window in Pages and it will automatically create a file in your project (hosted on Github) that has the settings you need. This file needs to also specify your frontmatter fields.
 
-This seems complicated but if watch the video I linked and look at the example below, it should make a lot more sense. And, you only have to do this once. Here's an example settings file:
+This seems complicated but if watch the video I linked and look at the example below, it should make a lot more sense. And, you only have to do this once. Here's an example `.pages.yaml` settings file:
 
-```
+```yaml
 media: public/blog
-content: 
+content:
   - name: posts
     label: Posts
     type: collection
     path: posts
-    fields: 
+    fields:
       - { name: title, label: Title, type: string }
       - { name: description, label: Description, type: string }
       - { name: layout, label: Layout, type: string }

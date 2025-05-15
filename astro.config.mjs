@@ -8,14 +8,19 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://orbiter.host",
-  output: "static",
-  markdown: {
-    shikiConfig: {
-      theme: 'min-dark'
-    }
-  },
-  integrations: [tailwind({
-    applyBaseStyles: false,
-  }), react(), mdx(), sitemap()],
+	site: "https://orbiter.host",
+	output: "static",
+	markdown: {
+		shikiConfig: {
+			theme: "github-dark-high-contrast",
+		},
+	},
+	integrations: [
+		tailwind({
+			applyBaseStyles: false,
+		}),
+		react(),
+		mdx(),
+		sitemap(),
+	],
 });
