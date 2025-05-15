@@ -11,3 +11,4 @@ content:
       - { name: heroImage, label: Cover Image, type: image }
       - { name: autor, label: Author, type: string }
       - { name: authorPfp, label: Author Image, type: string }
+      - { name: body, label: Body, type: rich-text }
