@@ -7,8 +7,8 @@ content:
     fields: 
       - { name: title, label: Title, type: string }
       - { name: description, label: Description, type: string }
-      - { name: pubDate, label: Published Date, type: date }
-      - { name: heroImage, label: Cover Image, type: image }
-      - { name: autor, label: Author, type: string }
+      - { name: pubDate, label: Published Date, type: string }
+      - { name: heroImage, label: Cover Image, type: string }
+      - { name: author, label: Author, type: string }
       - { name: authorPfp, label: Author Image, type: string }
       - { name: body, label: Body, type: rich-text }
