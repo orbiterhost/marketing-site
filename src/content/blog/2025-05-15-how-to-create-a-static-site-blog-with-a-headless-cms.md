@@ -154,4 +154,39 @@ To initialize a local git repository and then push to Github from the terminal, 
 
 [This video is a great tutorial on setting up pages](https://www.youtube.com/watch?v=KtoapCOT1j4), but I'll also walk you through it here. When you visit Pages CMS, you can sign up and will be asked to connect your Github account. When you do this, you will then be asked to allow Pages CMS access to your Github repositories. You can choose which repository or repositories to allow access to. In my case, I just selected the repository for my static site.
 
-When this is complete, Pages CMS will be connected to your repository, but it's not quite ready for use. You'll need to specify where your content lives and where your media lives. In our example, we didn't have any media assets, but you could create a folder in your project called `media` and that's where you'd put things like images and videos that you use in your posts. You'll need to provide this information in the settings editor window in Pages and it will automatically create a file in your project (hosted on Github) that has the settings you need.
+When this is complete, Pages CMS will be connected to your repository, but it's not quite ready for use. You'll need to specify where your content lives and where your media lives. In our example, we didn't have any media assets, but you could create a folder in your project called `media` and that's where you'd put things like images and videos that you use in your posts. You'll need to provide this information in the settings editor window in Pages and it will automatically create a file in your project (hosted on Github) that has the settings you need. This file needs to also specify your frontmatter fields.
+
+This seems complicated but if watch the video I linked and look at the example below, it should make a lot more sense. And, you only have to do this once. Here's an example settings file:
+
+```
+media: public/blog
+content: 
+  - name: posts
+    label: Posts
+    type: collection
+    path: posts
+    fields: 
+      - { name: title, label: Title, type: string }
+      - { name: description, label: Description, type: string }
+      - { name: layout, label: Layout, type: string }
+      - { name: tags, label: Tags, type: string }
+      - { name: body, label: Body, type: rich-text }
+```
+
+If you add this and save it, you'll see the Pages CMS interface update and suddenly you will have a Posts collection in the left sidebar you can use that to navigate your blog posts and even create news ones! Go ahead and open the one blog post you had made already, and you'll see all your content is there, and you can edit it as you wish.
+
+Here's what this blog post looks like inside the Pages CMS interface as I write it.
+
+![](/public/blog/CleanShot%202025-05-15%20at%2016.44.57@2x.png)
+
+Now, you have a collaborative and intuitive interface for creating blog posts without losing the control and security you get with static sites. It's the best of both worlds.
+
+## Deploying Your Site
+
+When it's time to deploy your site, you can automate deployments by using [Orbiter's Github Action](https://docs.orbiter.host/github-actions-and-hooks). You can also manually deploy with a simple upload anytime. Since every change you make in Pages CMS is synced to Github when you save it, you can go to your Github repository and download the files in the repo, then you can upload them to Orbiter using our web app or our CLI.
+
+You'll have your site online in just a few seconds. And if you do use the Github Action, you'll be able to continuously update and add to your blog posts without having to run any manual uploads.
+
+## Conclusion
+
+Static sites are fast and simple, but collaborating on them or even managing a solo blog on them can be difficult. Headless CMS exist exactly for this situation. There are many Headless CMS options on the market, but Pages CMS is a ton of fun and very intuitive. We look forward to seeing your creations!
