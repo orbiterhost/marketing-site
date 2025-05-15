@@ -5,6 +5,7 @@ description: Static sites are great, but adding a blog often means writing in
 pubDate: May 16 2025
 heroImage: https://cdn.orbiter.host/ipfs/bafkreiexfs4qkomnlwo52smse3k3sgiukyfstlovqyxij4odotajt5syhe
 author: Justin Hunter
+authorPfp: https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq
 ---
 I'm currently writing this blog post in a headless CMS. This is the first post on our site written that way. Up until now, Steve and I have written posts in our code editor, or in my case, I've written in Obsidian. Obsidian is great, but it's single player and less accessible than web apps. That's where a headless CMS shines.
 
