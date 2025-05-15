@@ -143,3 +143,15 @@ Now, if you go back to your browser and open `http://localhost:8080` you should 
 You now have a static site generated blog set up! You can create as many posts as you want, but what if you want an easier way to compose those posts? And what if you want to invite others who might not be so comfortable with the code editor and terminal? That's where a headless CMS like Pages CMS comes in.
 
 ## Setting Up Pages CMS
+
+Pages CMS is a free and open source CMS that builds on top of your existing Github repositories. So, the first step is to make sure you have a Github account. If you don't, [you can sign up here for free](https://github.com). Next, you need to take your existing static site that we just created and "push" it to Github.
+
+From your Github profile page, you should see a New Repository button. If not, click the Repositories link, then create a new one from there. Give your repository a name that represents your static site and decide if you want it public or private. When you've done this, you'll see a page like this:
+
+![](/public/blog/CleanShot%202025-05-15%20at%2016.29.40@2x.png)
+
+To initialize a local git repository and then push to Github from the terminal, [you'll want to follow this guide](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github). When you've done this, you're ready to sign up for Pages CMS and connect your repository.
+
+[This video is a great tutorial on setting up pages](https://www.youtube.com/watch?v=KtoapCOT1j4), but I'll also walk you through it here. When you visit Pages CMS, you can sign up and will be asked to connect your Github account. When you do this, you will then be asked to allow Pages CMS access to your Github repositories. You can choose which repository or repositories to allow access to. In my case, I just selected the repository for my static site.
+
+When this is complete, Pages CMS will be connected to your repository, but it's not quite ready for use. You'll need to specify where your content lives and where your media lives. In our example, we didn't have any media assets, but you could create a folder in your project called `media` and that's where you'd put things like images and videos that you use in your posts. You'll need to provide this information in the settings editor window in Pages and it will automatically create a file in your project (hosted on Github) that has the settings you need.
