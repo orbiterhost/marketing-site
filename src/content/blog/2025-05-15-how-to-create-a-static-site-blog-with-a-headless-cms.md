@@ -2,6 +2,8 @@
 title: How To Create a Static Site Blog With a Headless CMS
 description: Static sites are great, but adding a blog often means writing in
   markdown. What if it didn't?
+pubDate: May 16 2025
+heroImage: https://cdn.orbiter.host/ipfs/bafkreiexfs4qkomnlwo52smse3k3sgiukyfstlovqyxij4odotajt5syhe
 author: Justin Hunter
 ---
 I'm currently writing this blog post in a headless CMS. This is the first post on our site written that way. Up until now, Steve and I have written posts in our code editor, or in my case, I've written in Obsidian. Obsidian is great, but it's single player and less accessible than web apps. That's where a headless CMS shines.
