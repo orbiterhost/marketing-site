@@ -23,7 +23,7 @@ The first step to migrating away from Glitch is to export your project. Because 
 
 Log into your Glitch account, then go to [your Dashboard](https://glitch.com/dashboard). There, you will see your projects. To the far right, you’ll see the download button for the project. When you click this, it will download your project as a `tgz` file, which is simply a compressed file format similar to `zip`. Most computers and decompress these projects without any special software simply by double clicking on it.
 
-![](/public/blog/CleanShot%202025-05-27%20at%2008.52.27@2x.png)
+![](/blog/CleanShot%202025-05-27%20at%2008.52.27@2x.png)
 
 When you’ve decompressed the files, you should see a project folder called `app` or something similar. Inside that folder, you’ll find a `build` folder. It seems Glitch has standardized this folder naming, but in the event you don’t see a folder with this name, look for something like `dist`, `out`, or `_site`.
 
@@ -45,7 +45,7 @@ You’ll be asked to select a subdomain for your site, and within seconds your s
 
 If you’d prefer to use a CLI tool or if you use Github, you can consider the Orbiter [CLI](https://docs.orbiter.host/cli) and [Github Action](https://docs.orbiter.host/github-actions-and-hooks).
 
-![](/public/blog/CleanShot%202025-05-27%20at%2011.09.30@2x.png)
+![](/blog/CleanShot%202025-05-27%20at%2011.09.30@2x.png)
 
 ### Netlify
 
@@ -55,7 +55,7 @@ That said, it’s still easier than some other providers. Let’s explore.
 
 First, [sign up for a free Netlify account here](https://netlify.com). You’ll need to fill out some onboarding questions and give your project a name.
 
-![](/public/blog/CleanShot%202025-05-27%20at%2009.05.14@2x.png)
+![](/blog/CleanShot%202025-05-27%20at%2009.05.14@2x.png)
 
 Then, you’ll need to click “Continue to deploy”. Here, you’ll have the option to deploy the project from a git repository on Github, Gitlab, or Bitbucket. If you don’t have your project hosted using a git repository, you can click the small link below those options to use Netlify Drop.
 
