@@ -3,8 +3,9 @@ title: How To Migrate Your Project From Glitch To Another Host
 description: Glitch announced that they won't be hosting projects anymore, so
   let's learn how to migrate those projects
 pubDate: May 29 2025
-heroImage: https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq
+heroImage: https://cdn.orbiter.host/ipfs/bafybeiguzqynwaj6x7jmj6az4hsqpsx7h2hpf432frzl72xlxbkdhodree
 author: Justin Hunter
+authorPfp: https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq
 ---
 Glitch was a wonderful community for online creators to build websites and apps while sharing them with the world. People could remix these sites and apps and make their own versions. The projects were default open and discoverable. Glitch provided hosting, and everything was available to the creators, remixers, and the lurkers.
 
