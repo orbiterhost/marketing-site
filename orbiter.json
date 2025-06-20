@@ -1,0 +1,6 @@
+{
+  "siteId": "bbf2dd2c-8754-493d-9061-805a32e910f1",
+  "domain": "marketing",
+  "buildCommand": "npm run build",
+  "buildDir": "dist"
+}

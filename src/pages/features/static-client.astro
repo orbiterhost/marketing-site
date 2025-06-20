@@ -1,0 +1,26 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/components/Footer.astro";
+import Nav from "@/components/Nav.astro";
+---
+
+<Layout title="Supports Static & Client-side Apps" description="Deploy any static site or client-rendered app—React, Astro, Next.js, Vue, Svelte, and more.">
+  <main>
+    <Nav />
+    <div class="max-w-2xl mx-auto py-12 px-4 text-white">
+      <h1 class="text-4xl font-bold mb-4">Supports Static & Client-side Apps</h1>
+      <p class="mb-6">Orbiter is built for the modern web. Deploy any static site or client-rendered app with zero configuration. Whether you use a site generator or a JavaScript framework, Orbiter has you covered.</p>
+      <ul class="list-disc list-inside mb-6">
+        <li>React</li>
+        <li>Astro</li>
+        <li>Next.js (static export)</li>
+        <li>Vue</li>
+        <li>Svelte</li>
+        <li>Gatsby</li>
+        <li>Hugo, 11ty, Jekyll, and more</li>
+      </ul>
+      <a href="https://app.orbiter.host" class="inline-block bg-primary text-white px-6 py-2 rounded font-bold hover:bg-secondary transition">Deploy Your Site</a>
+    </div>
+    <Footer />
+  </main>
+</Layout> 

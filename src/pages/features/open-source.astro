@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/components/Footer.astro";
+import Nav from "@/components/Nav.astro";
+---
+
+<Layout title="Open Source" description="Orbiter is open source—transparent, auditable, and built for the community.">
+  <main>
+    <Nav />
+    <div class="max-w-2xl mx-auto py-12 px-4 text-white">
+      <h1 class="text-4xl font-bold mb-4">Open Source</h1>
+      <p class="mb-6">Orbiter is fully open source. Our code is transparent, auditable, and open to contributions from the community. We believe the future of the web should be built in the open, by and for its users.</p>
+      <ul class="list-disc list-inside mb-6">
+        <li>Transparent and auditable codebase</li>
+        <li>Community-driven development</li>
+        <li>No vendor lock-in</li>
+        <li>Fork, contribute, or self-host</li>
+      </ul>
+      <a href="https://github.com/orbiterhost" class="inline-block bg-primary text-white px-6 py-2 rounded font-bold hover:bg-secondary transition">View on GitHub</a>
+    </div>
+    <Footer />
+  </main>
+</Layout> 

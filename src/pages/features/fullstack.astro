@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/components/Footer.astro";
+import Nav from "@/components/Nav.astro";
+---
+
+<Layout title="Fullstack Open Web Hosting" description="Host static, client-side, and serverless apps all in one place with Orbiter—open, composable, and future-proof.">
+  <main>
+    <Nav />
+    <div class="max-w-2xl mx-auto py-12 px-4 text-white">
+      <h1 class="text-4xl font-bold mb-4">Fullstack Open Web Hosting</h1>
+      <p class="mb-6">Orbiter lets you deploy static sites, client-side rendered apps, and serverless functions together—no silos, no lock-in. Build and host your entire stack on an open, composable platform designed for the future of the web.</p>
+      <ul class="list-disc list-inside mb-6">
+        <li>Mix static, client, and serverless in one project</li>
+        <li>Open source and community-driven</li>
+        <li>Deploy in seconds, scale globally</li>
+        <li>No proprietary build pipelines or vendor lock-in</li>
+      </ul>
+      <a href="https://app.orbiter.host" class="inline-block bg-primary text-white px-6 py-2 rounded font-bold hover:bg-secondary transition">Try Orbiter Free</a>
+    </div>
+    <Footer />
+  </main>
+</Layout> 

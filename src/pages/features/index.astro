@@ -1,0 +1,29 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/components/Footer.astro";
+import Nav from "@/components/Nav.astro";
+---
+
+<Layout title="Features" description="Explore all the features of Orbiter fullstack open web hosting">
+  <main>
+    <div class="relative flex flex-col items-center justify-start w-full text-white gap-12 mb-10">
+      <Nav />
+      <div class="flex flex-col items-center justify-center border-0">
+        <h1 class="text-6xl sm:text-8xl flex items-center gap-2 relative z-10">Features</h1>
+        <p class="text-lg mt-4 max-w-2xl text-center">Explore everything Orbiter offers for fullstack, open, and independent web hosting. Click any feature to learn more.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 grid-cols-1 gap-12 sm:gap-24 p-4 w-full max-w-4xl mx-auto">
+        <a href="/features/fullstack" class="no-underline"><div class="bg-black border-primary text-white rounded-xl border p-6 hover:shadow-lg transition"><h2 class="text-2xl font-bold mb-2">Fullstack Open Web Hosting</h2><p>Host static sites, client-side apps, and serverless functions all in one place—open, composable, and future-proof.</p></div></a>
+        <a href="/features/static-client" class="no-underline"><div class="bg-black border-primary text-white rounded-xl border p-6 hover:shadow-lg transition"><h2 class="text-2xl font-bold mb-2">Supports Static & Client-side Apps</h2><p>Deploy any static site or client-rendered app—React, Astro, Next.js, Vue, Svelte, and more.</p></div></a>
+        <a href="/features/serverless" class="no-underline"><div class="bg-black border-primary text-white rounded-xl border p-6 hover:shadow-lg transition"><h2 class="text-2xl font-bold mb-2">Serverless Functions</h2><p>Run backend code with serverless functions for a true fullstack experience—no infrastructure headaches.</p></div></a>
+        <a href="/features/bhvr" class="no-underline"><div class="bg-black border-primary text-white rounded-xl border p-6 hover:shadow-lg transition"><h2 class="text-2xl font-bold mb-2">bhvr Partnership & Quickstart</h2><p>Official deployment partner for <b>bhvr</b>, the fullstack framework. Use Orbiter CLI to instantly scaffold and deploy bhvr apps.</p></div></a>
+        <a href="/features/open-source" class="no-underline"><div class="bg-black border-primary text-white rounded-xl border p-6 hover:shadow-lg transition"><h2 class="text-2xl font-bold mb-2">Open Source</h2><p>Orbiter is open source—transparent, auditable, and built for the community.</p></div></a>
+        <a href="/features/independent" class="no-underline"><div class="bg-black border-primary text-white rounded-xl border p-6 hover:shadow-lg transition"><h2 class="text-2xl font-bold mb-2">Independent</h2><p>Built and run by indie founders. No VC, no lock-in, no corporate overlords.</p></div></a>
+        <a href="/features/fast" class="no-underline"><div class="bg-black border-primary text-white rounded-xl border p-6 hover:shadow-lg transition"><h2 class="text-2xl font-bold mb-2">Fast</h2><p>Global CDN, instant cache, and zero build queue. Your site is always fast.</p></div></a>
+        <a href="/features/no-build-minutes" class="no-underline"><div class="bg-black border-primary text-white rounded-xl border p-6 hover:shadow-lg transition"><h2 class="text-2xl font-bold mb-2">No Build Minutes</h2><p>Run builds locally—never pay for build minutes again. Deploy in seconds, not minutes.</p></div></a>
+        <a href="/features/redirects-404" class="no-underline"><div class="bg-black border-primary text-white rounded-xl border p-6 hover:shadow-lg transition"><h2 class="text-2xl font-bold mb-2">Redirects & Custom 404s</h2><p>First-class support for redirects and custom 404 pages—control your site's experience.</p></div></a>
+      </div>
+    </div>
+    <Footer />
+  </main>
+</Layout> 

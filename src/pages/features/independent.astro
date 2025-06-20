@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/components/Footer.astro";
+import Nav from "@/components/Nav.astro";
+---
+
+<Layout title="Independent" description="Built and run by indie founders. No VC, no lock-in, no corporate overlords.">
+  <main>
+    <Nav />
+    <div class="max-w-2xl mx-auto py-12 px-4 text-white">
+      <h1 class="text-4xl font-bold mb-4">Independent</h1>
+      <p class="mb-6">Orbiter is built and run by indie founders. We answer to our users, not to investors or corporate overlords. Our mission is to keep the web open, accessible, and fun for everyone.</p>
+      <ul class="list-disc list-inside mb-6">
+        <li>No VC funding or outside control</li>
+        <li>No lock-in or hidden fees</li>
+        <li>Decisions made for users, not shareholders</li>
+        <li>Built for the indie web and open web enthusiasts</li>
+      </ul>
+      <a href="/about" class="inline-block bg-primary text-white px-6 py-2 rounded font-bold hover:bg-secondary transition">Meet the Founders</a>
+    </div>
+    <Footer />
+  </main>
+</Layout> 
