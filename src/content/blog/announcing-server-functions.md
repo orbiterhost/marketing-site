@@ -3,7 +3,7 @@ title: Announcing Server Functions
 description: Server functions now allow developers to build fullstack
   applications with Orbiter
 pubDate: Jun 23 2025
-heroImage: https://cdn.orbiter.host/ipfs/bafkreie6q55ryxlodylhpcbal35yyoryf3jp3k7l3q4xcm5k5n5ufhplz4
+heroImage: https://marketing.orbiter.host/announcing-server-functions.png
 author: Justin Hunter
 authorPfp: https://cdn.orbiter.host/ipfs/bafkreidafe5bjh7btrw42mjsd44mfkq5zamonfgxr2p5dlatwod66ltjxq
 ---
@@ -36,16 +36,16 @@ Orbiter's Server Functions are available on paid plans. That means for as little
 The Launch plan allows:
 
 *   4 million requests to your client app and Server Function per month
-    
+
 *   5 million ms of CPU time (the time the CPU takes to process the request) per month
-    
+
 
 The Orbit plan allows:
 
 *   10 million requests per month
-    
+
 *   10 million ms of CPU time
-    
+
 
 If you exceed your limits, we don't currently have overages. We'll work with you on how to address the excess usage as we decide how we'd like to bill for these types of things in the future. We want to avoid the surprise bills that come with most hosting platforms that implement usage based overage billing.
 
